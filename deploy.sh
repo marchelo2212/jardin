@@ -3,7 +3,7 @@ set -e
 
 # RUTAS
 QUARTZ_REPO="/Users/marcelosotaminga/Documents/proyectos-github/mi-quartz"
-PAGES_REPO="Users/marcelosotaminga/Documents/proyectos-github/marchelo2212.github.io"
+PAGES_REPO="/Users/marcelosotaminga/Documents/proyectos-github/marchelo2212.github.io"
 
 echo "🧭 Cambiando a repo Quartz..."
 cd "$QUARTZ_REPO"
