@@ -369,6 +369,12 @@ export const ObsidianFlavoredMarkdown: QuartzTransformerPlugin<Partial<Options>>
 
           if (opts.enableInHtmlEmbed) {
             visit(tree, "html", (node: Html) => {
+              const comments: string[] = []
+              node.value = node.value.replace(/<!--[\s\S]*?-->/g, (match) => {
+                comments.push(match)
+                return `__QUARTZ_COMMENT_${comments.length - 1}__`
+              })
+
               for (const [regex, replace] of replacements) {
                 if (typeof replace === "string") {
                   node.value = node.value.replace(regex, replace)
@@ -387,6 +393,10 @@ export const ObsidianFlavoredMarkdown: QuartzTransformerPlugin<Partial<Options>>
                   })
                 }
               }
+
+              node.value = node.value.replace(/__QUARTZ_COMMENT_(\d+)__/g, (_, index) => {
+                return comments[parseInt(index, 10)]
+              })
             })
           }
           mdastFindReplace(tree, replacements)
