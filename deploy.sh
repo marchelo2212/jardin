@@ -32,12 +32,23 @@ npx quartz build
 # -------------------
 
 echo "📦 Copiando resultado al repo de GitHub Pages..."
-# Aseguramos que no borramos la carpeta .git del repo de destino
-find "$PAGES_REPO" -maxdepth 1 ! -name '.git' ! -name '.' -exec rm -rf {} +
-cp -R public/* "$PAGES_REPO"/
+
+# 1. Entramos al repo de destino
+cd "$PAGES_REPO"
+
+# 2. Borramos todo EXCEPTO la carpeta .git (para no romper el repo)
+# Usamos un método más compatible con macOS
+ls -A | grep -v ".git" | xargs rm -rf
+
+# 3. Volvemos al repo de Quartz para copiar
+cd "$QUARTZ_REPO"
+
+# 4. Copiamos el contenido de public al repo de destino
+cp -R public/. "$PAGES_REPO"/
 
 echo "📤 Haciendo commit y push en marchelo2212.github.io..."
 cd "$PAGES_REPO"
+# ... resto del código de git push ...
 git add .
 git commit -m "Deploy automático: limpieza de caché y corrección de baseUrl" || echo "ℹ️ No hay cambios nuevos."
 git push
