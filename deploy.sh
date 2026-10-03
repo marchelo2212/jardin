@@ -2,28 +2,27 @@
 set -e
 
 # RUTAS
-QUARTZ_REPO="/Users/marcelosotaminga/Documents/proyectos-github/mi-quartz"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+QUARTZ_REPO="${QUARTZ_REPO:-$SCRIPT_DIR}"
 
-echo "🧭 Cambiando a repo Quartz..."
+echo "🧭 Cambiando a repo Quartz ($QUARTZ_REPO)..."
 cd "$QUARTZ_REPO"
 
 echo "🌿 Asegurando rama v4..."
 git checkout v4
 
+echo "🔍 Revisando cambios locales pendientes..."
+if [ -n "$(git status --porcelain)" ]; then
+  echo "📌 Guardando cambios locales pendientes..."
+  git add .
+  git commit -m "Update Quartz notes and config"
+fi
+
 echo "⬇️ Sincronizando con GitHub (por cambios de Quartz Syncer)..."
 git pull --rebase origin v4
 
-echo "🔍 Revisando cambios locales en Quartz..."
-if [ -n "$(git status --porcelain)" ]; then
-  echo "📌 Hay cambios locales en Quartz. Haciendo commit..."
-  git add .
-  git commit -m "Update Quartz notes and config"
-  echo "📤 Subiendo a GitHub (jardin)..."
-  git push origin v4
-  echo "🚀 ¡Cambios enviados a GitHub!"
-else
-  echo "✅ Todo sincronizado. No hay cambios pendientes."
-fi
+echo "📤 Enviando actualizaciones a GitHub..."
+git push origin v4
 
 echo ""
 echo "======================================================================"
