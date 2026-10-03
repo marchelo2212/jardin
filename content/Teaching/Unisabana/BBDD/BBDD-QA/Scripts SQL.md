@@ -6,7 +6,6 @@ tags:
   - Constraint
   - "#MySQL"
   - "#QA"
-cssclasses: ""
 ---
 
 # 📘 Guía práctica: Organización de scripts SQL en Ubuntu (LAMP con MariaDB/MySQL)
@@ -61,14 +60,14 @@ EXIT;
 Dentro de tu proyecto:
 Considera que podría estár en cualquier carpeta, pero, para ser ordenado/a, podría ser recomendable ubicarlos en la carpeta html:
 `cd /var/www/html`
-Luego de ello: 
+Luego de ello:
+
 ```bash
 cd /var/www/html
 mkdir -p proyecto/sql
 cd proyecto/sql
 touch 01_schema.sql 02_seed.sql 03_queries.sql
 ```
-
 
 ## 3) Contenido de ejemplo (Universidad)
 
@@ -224,7 +223,6 @@ mysql -u dev -p --database=uni_db < 03_queries.sql
 ```
 
 > ⚠️ Recuerda: el **orden importa** → primero el esquema, luego los datos, después las consultas.
-
 
 ## 5) Integración con proyecto LAMP
 

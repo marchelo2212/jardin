@@ -2,7 +2,6 @@
 publish: true
 created: 2025-03-27T06:49
 modified: 2025-06-18T20:44:08-05:00
-cssclasses: ""
 ---
 
 # ¿Cómo verificar la información que encuentro en internet?
@@ -12,7 +11,7 @@ En la era de la sobrecarga informativa, especialmente en el ámbito político, e
 Este artículo describe cómo utilizar la IA para verificar datos en contextos políticos, con el fin de promover la reflexión informada y el análisis crítico de las fuentes. A través de un proceso estructurado, se puede utilizar IA para analizar, comparar y presentar hechos que ayuden a las personas a tomar decisiones basadas en información precisa.
 
 1. **Identificación de la Información a Verificar**
-El primer paso es identificar qué tipo de información se necesita verificar. En este caso, nos enfocamos en contenido político, como imágenes, videos, audios o declaraciones. Tomemos como ejemplo un video de una red social donde un político realiza una afirmación que podría ser polémica o falsa.
+   El primer paso es identificar qué tipo de información se necesita verificar. En este caso, nos enfocamos en contenido político, como imágenes, videos, audios o declaraciones. Tomemos como ejemplo un video de una red social donde un político realiza una afirmación que podría ser polémica o falsa.
 
 En este caso, la información se desglosa para que sea más fácil de procesar. Por ejemplo, si el político menciona estadísticas sobre la economía, como "la deuda pública se ha duplicado en los últimos cinco años", es necesario verificar esa cifra y el contexto detrás de esa afirmación.
 
@@ -21,15 +20,15 @@ En este caso, la información se desglosa para que sea más fácil de procesar. 
 Imagen 1: Captura de vídeo con argumentos del estado Ecuatoriano
 
 2. **Procesamiento a Texto**
-Para facilitar el análisis, la IA convierte el contenido no textual (como video o audio) en texto. Esto permite un procesamiento más sencillo de los datos. Utilizando herramientas de transcripción automática o software especializado en reconocimiento de voz, podemos obtener un texto que sea más accesible para la verificación.
+   Para facilitar el análisis, la IA convierte el contenido no textual (como video o audio) en texto. Esto permite un procesamiento más sencillo de los datos. Utilizando herramientas de transcripción automática o software especializado en reconocimiento de voz, podemos obtener un texto que sea más accesible para la verificación.
 
 ![](https://i.imgur.com/o62tWG7.png)
 
 Imagen 2: Captura de la transcripción del audio/video
 
 3. Creación de un Prompt Claro
-Una vez que tenemos el contenido procesado a texto, generamos prompt claro y conciso para la IA. Este prompt debe reflejar de manera precisa lo que queremos verificar. En este ejemplo se proceso la transcripción para establecer temas y argumentos. 
-Prompt:
+   Una vez que tenemos el contenido procesado a texto, generamos prompt claro y conciso para la IA. Este prompt debe reflejar de manera precisa lo que queremos verificar. En este ejemplo se proceso la transcripción para establecer temas y argumentos.
+   Prompt:
 
 > "Genera una lista con los temas que se mencionan y los argumentos empleados en cada tema de esta transcripción."
 
@@ -42,20 +41,20 @@ Con este inusmo -que igualemente necesita ser revisado- se generó un prompt nue
 ![](https://i.imgur.com/I2hdbX3.png)
 
 4. Uso de Modelos de Investigación Avanzados
-Con el prompt listo, utilizamos herramientas de IA para realizar la investigación profunda en fuentes confiables. Algunas de las IAs más eficaces para este tipo de tareas incluyen:
+   Con el prompt listo, utilizamos herramientas de IA para realizar la investigación profunda en fuentes confiables. Algunas de las IAs más eficaces para este tipo de tareas incluyen:
 
-- OpenAI (ChatGPT): Un modelo avanzado que puede ayudar en la búsqueda y contraste de información, y generar respuestas detalladas basadas en una amplia base de datos. [OpenAI](https://openai.com/) 
+- OpenAI (ChatGPT): Un modelo avanzado que puede ayudar en la búsqueda y contraste de información, y generar respuestas detalladas basadas en una amplia base de datos. [OpenAI](https://openai.com/)
 
 - Gemini: Una IA especializada en análisis profundo de datos y fuentes verificables. Enlace a Gemini. [Gemini](https://gemini.google.com/)
 
-- Deepseek: Una herramienta diseñada para profundizar en la búsqueda de información específica, extrayendo datos de fuentes confiables. [DeepSeek \| 深度求索](https://www.deepseek.com/)
+- Deepseek: Una herramienta diseñada para profundizar en la búsqueda de información específica, extrayendo datos de fuentes confiables. [DeepSeek | 深度求索](https://www.deepseek.com/)
 
-- Grok: Otra opción potente para el análisis de información y la verificación de datos políticos, especialmente en tiempo real. Enlace a Grok. [Welcome \| xAI](https://x.ai/)
+- Grok: Otra opción potente para el análisis de información y la verificación de datos políticos, especialmente en tiempo real. Enlace a Grok. [Welcome | xAI](https://x.ai/)
 
 Estas herramientas pueden acceder a bases de datos, artículos académicos y fuentes oficiales para obtener la información más actualizada y precisa posible.
 
 5. Revisión y Contraste de Resultados
-Una vez que la IA ha realizado la investigación, es crucial revisar los resultados. Esto implica verificar si las fuentes de información son confiables y si los datos obtenidos coinciden con la afirmación inicial. En este proceso, se pueden detectar sesgos en la información o confirmar si la afirmación era correcta.
+   Una vez que la IA ha realizado la investigación, es crucial revisar los resultados. Esto implica verificar si las fuentes de información son confiables y si los datos obtenidos coinciden con la afirmación inicial. En este proceso, se pueden detectar sesgos en la información o confirmar si la afirmación era correcta.
 
 ![](https://i.imgur.com/2dLy6KT.png)
 
@@ -66,7 +65,7 @@ Imagen 3: Captura del informe generado por la IA
 Las Imágenes mostrandomuestran los resultados obtenidos a partir de la búsqueda en Gemini.
 
 6. Sistematización de la Información
-Después de revisar los resultados, se organiza la información de manera que sea fácilmente comprensible para el público. Esta información se presenta en formato claro y accesible, destacando las fuentes confiables y proporcionando un análisis objetivo. Se utiliza un enfoque que permita a los usuarios contrastar datos y tomar decisiones basadas en hechos verificables.
+   Después de revisar los resultados, se organiza la información de manera que sea fácilmente comprensible para el público. Esta información se presenta en formato claro y accesible, destacando las fuentes confiables y proporcionando un análisis objetivo. Se utiliza un enfoque que permita a los usuarios contrastar datos y tomar decisiones basadas en hechos verificables.
 
 ![](https://i.imgur.com/4FNmteW.png)
 
@@ -112,8 +111,8 @@ Para este ejemplo se ha creado una tabla d sistematización:
 |                             | Alto gasto privado en salud (33%).                            | No Verificable con este Informe (Informe indica falta fuente)    | Menciona la cifra del 33% pero explícitamente señala "source needed", indicando que no fue corroborada.                                                                                                 | Texto Sec. 8                        |
 | **Sistema Educativo**       | No se participa en PISA desde 2018.                           | Totalmente Falso                                                 | Corrige explícitamente: Ecuador SÍ participó en PISA-D en 2018 y planea hacerlo en 2025.                                                                                                                | 16, 17                              |
 |                             | Resultados de PISA no eran buenos.                            | Totalmente Cierto                                                | Confirma que resultados de PISA-D 2018 estuvieron por debajo de promedios OCDE, a pesar de buen desempeño relativo entre países PISA-D. Menciona % significativo bajo nivel mínimo.                     | 17, 20, 27                          |
-|                             | Deserción escolar aumentó del 1% al 5%.                       | No Verificable con este Informe (Datos Parciales)                | No confirma esta tendencia *nacional específica* (1% a 5%) para educación básica. Cita 1.4% fuera de secundaria (2017), altas tasas *universitarias* (12-39%) y *de bachillerato* en Durán (~30%).      | 19, 21, 23                          |
-|                             | 40,000 niños desertan cada año.                               | No Verificable con este Informe (Dato Regional)                  | No puede verificar la cifra nacional. Menciona 28,000 en 5 años *solo en Esmeraldas*.                                                                                                                   | 24                                  |
+|                             | Deserción escolar aumentó del 1% al 5%.                       | No Verificable con este Informe (Datos Parciales)                | No confirma esta tendencia _nacional específica_ (1% a 5%) para educación básica. Cita 1.4% fuera de secundaria (2017), altas tasas _universitarias_ (12-39%) y _de bachillerato_ en Durán (~30%).      | 19, 21, 23                          |
+|                             | 40,000 niños desertan cada año.                               | No Verificable con este Informe (Dato Regional)                  | No puede verificar la cifra nacional. Menciona 28,000 en 5 años _solo en Esmeraldas_.                                                                                                                   | 24                                  |
 |                             | Aumento 26% suicidio infantil (340 casos 2023).               | No Verificable con este Informe                                  | Declara explícitamente que no tiene datos sobre este aumento porcentual ni sobre el número de casos para 2023.                                                                                          | Texto Sec. 9, 6 (contexto)          |
 | **Emigración**              | 250,000 emigraron a EEUU en 2023.                             | Parcialmente Cierto (Fuertemente sugerido por datos)             | No da cifra exacta para emigración a EEUU 2023, pero datos de detenciones (EEUU 72k Oct22-May23; México 5.8k Ene23) y cruces Darién (>250k total Jan-Oct23) sugieren fuertemente una emigración masiva. | 10, 28                              |
 |                             | 52% desearía emigrar (Gallup).                                | Parcialmente Cierto (Cifras cercanas confirmadas)                | Cita CID Gallup (47% Julio 2023) y Gallup (38% 2022), confirmando alta intención, aunque ligeramente inferior al 52%.                                                                                   | 26, 29                              |
@@ -122,20 +121,16 @@ Para este ejemplo se ha creado una tabla d sistematización:
 
 Imagen 5: Infografía de resultados y conclusiones
 
-
 A manera de conclusión:
 
 **El Poder de la IA para Mejorar el Pensamiento Crítico**
 El uso de la inteligencia artificial para la verificación de la información es una herramienta poderosa para combatir la desinformación y fomentar una ciudadanía más crítica e informada. Al facilitar el acceso a información verificada, la IA permite que las personas analicen, comparen y cuestionen las afirmaciones políticas antes de aceptar algo como verdad. En un entorno donde las noticias falsas son cada vez más prevalentes, las herramientas de IA como Gemini, OpenAI, Deepseek y Grok se presentan como una solución clave para promover el pensamiento crítico y fortalecer nuestra democracia.
 
-Saludos!! 
+Saludos!!
 Elaborado por: Marcelo Sotaminga
 @marchelo2212
 
-Herramientas empleadas: 
+Herramientas empleadas:
 [Google AI Studio](https://aistudio.google.com/)
 [OpenAI](https://openai.com/)
-[Inicio \| LibreOffice en español - suite ofimática libre, basada en OpenOffice, compatible con Microsoft](https://es.libreoffice.org/)
-
-
-
+[Inicio | LibreOffice en español - suite ofimática libre, basada en OpenOffice, compatible con Microsoft](https://es.libreoffice.org/)

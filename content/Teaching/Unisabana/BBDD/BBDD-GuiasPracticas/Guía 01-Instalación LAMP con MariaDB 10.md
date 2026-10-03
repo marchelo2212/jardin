@@ -2,10 +2,12 @@
 publish: true
 created: 2025-09-09T09:43
 modified: 2025-09-09T19:42:12-05:00
-cssclasses: ""
 ---
 
-# Guía 01-Instalación LAMP con MariaDB 10  Autor
+↩️  [[Teaching/Unisabana/BBDD/BBDD-GuiasPracticas/index|index]]
+
+# Guía 01 - Instalación LAMP con MariaDB 10  Autor
+
 # 1) Actualiza e instala Apache
 
 ```bash
@@ -70,11 +72,12 @@ Te pedirá la contraseña del usuario de la base de datos que creaste (DB=dev y 
 Mostrará algo similar a esto:
 ![](https://i.imgur.com/OURBy4Z.png)
 
-
 Para salir de MariaDB (MySQL)
+
 ```MySQL
 exit;
 ```
+
 # 5) Instala phpMyAdmin
 
 ```bash
@@ -88,6 +91,7 @@ sudo apt -y install phpmyadmin
 ![700](https://i.imgur.com/VuyyXES.png)
 
 Para solucionar aplica esto:
+
 ```bash
 sudo ln -s /etc/phpmyadmin/apache.conf /etc/apache2/conf-available/phpmyadmin.conf
 
@@ -98,18 +102,18 @@ sudo phpenmod mbstring
 sudo systemctl reload apache2
 ```
 
-Abre: `http://localhost/phpmyadmin`  
+Abre: `http://localhost/phpmyadmin`
 
 ![600](https://i.imgur.com/fG4XZ8H.png)
 
 Entra con `dev` / `TuPassFuerte!` (o con el usuario y pass que hayas creado).
 ![700](https://i.imgur.com/UYsGM2P.png)
-# 6) Archivo PHP de prueba (para verificar PHP y MySQL)
 
+# 6) Archivo PHP de prueba (para verificar PHP y MySQL)
 
 Ir a la ubicación: /var/www/html y crear un archivo "info.php" con esta información
 
-```bash 
+```bash
 cd /var/www/html
 
 sudo touch info.php
@@ -118,12 +122,12 @@ sudo touch info.php
 
 modifica el archivo creado info.php con nano
 
-```bash 
+```bash
 sudo nano info.php
 ```
 
-
 Aquí el código a ingresar a info.php
+
 ```php
 <?php phpinfo(); ?>
 
@@ -138,6 +142,8 @@ Prueba en el navegador:
 # 7) Permisos básicos en el DocumentRoot (si vas a desplegar código)
 
 ```bash
+sudo usermod -aG www-data $USER && \
+
 sudo chown -R $USER:www-data /var/www/html && \
 
 find /var/www/html -type d -exec chmod 775 {} \; && \
@@ -155,10 +161,9 @@ systemctl status mariadb
 
 **NOTA:** Por si acaso para salir luego de que les muestre el estatus de apache2 o de mariadb deben salir presionando ctrl+c
 
+# 9) En caso que exista errores
 
-# 9) En caso que exista errores 
-
-En el caso de que existan errores mostrando phpmyadmin desde el servidor local (localhost) en el navegador web, podemos revisar el log de error de apache para revisar los detalles e investigar en internet el error, su causa y su solución. 
+En el caso de que existan errores mostrando phpmyadmin desde el servidor local (localhost) en el navegador web, podemos revisar el log de error de apache para revisar los detalles e investigar en internet el error, su causa y su solución.
 
 _No es recomendable hacer caso a todo lo que dice ChatGPT ya que puede darnos instrucciones contraproducentes._
 
@@ -168,21 +173,21 @@ _No es recomendable hacer caso a todo lo que dice ChatGPT ya que puede darnos in
 
 # 11) Comprobación de conexión con la base de datos
 
-dentro de la ruta: /var/www/html/ crea un documento "test_sql.php"
+dentro de la ruta: /var/www/html/ crea un documento "test\_sql.php"
 
-```bash 
+```bash
 sudo touch test_sql.php
 ```
 
 Modifica con nano el archivo creado:
 
-```bash 
+```bash
 sudo nano  test_sql.php
 ```
 
-Aquí lo que debe contener el archivo test_sql.php
+Aquí lo que debe contener el archivo test\_sql.php
 
-```php 
+```php
 <?php
 try {
     $pdo = new PDO(
@@ -200,7 +205,7 @@ try {
 
 Recuerda que para que se pueda revisar el documento debes de haber realizado el **paso 7** de este manual, si aún no lo ha hecho o si en caso de falla, puede aplicar nuevamente este paso.
 
-`http://localhost/test_sql.php` 
+`http://localhost/test_sql.php`
 
 El resultado debería ser una ventana de navegador web con el texto:
 
@@ -208,3 +213,4 @@ El resultado debería ser una ventana de navegador web con el texto:
 
 **OK LAMP + MariaDB + PHP**
 
+↩️  [[Teaching/Unisabana/BBDD/BBDD-GuiasPracticas/index|index]]

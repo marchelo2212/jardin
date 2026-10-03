@@ -2,9 +2,7 @@
 publish: true
 created: 2025-11-03T07:40
 modified: 2025-11-03T08:49:12-05:00
-cssclasses: ""
 ---
-
 
 # 🧩 ¿Cómo escribir párrafos eficaces para _papers_ científicos?
 
@@ -20,13 +18,14 @@ En escritura científica, la claridad se logra aplicando el patrón **Context–
 
 Por ejemplo, en un párrafo de resultados de Deep Learning:
 
-> **Context:** “Evaluamos la red convolucional propuesta frente a tres modelos base en el conjunto CIFAR-100.”  
-> **Content:** “El modelo alcanzó una precisión del 87.2 % ± 0.4 %, superando en 2.3 p.p. al ResNet-50 con igual número de parámetros.”  
+> **Context:** “Evaluamos la red convolucional propuesta frente a tres modelos base en el conjunto CIFAR-100.”\
+> **Content:** “El modelo alcanzó una precisión del 87.2 % ± 0.4 %, superando en 2.3 p.p. al ResNet-50 con igual número de parámetros.”\
 > **Conclusion:** “Esto sugiere que la incorporación del bloque de atención dual mejora la eficiencia representacional sin aumentar la complejidad computacional.”
 
 Esta microestructura facilita que el lector _“escanee”_ el artículo y retenga los mensajes principales.
 
 📖 Referencia:
+
 - Mensh & Kording (2017). _Ten simple rules for structuring papers._ [PLOS Computational Biology](https://pmc.ncbi.nlm.nih.gov/articles/PMC5619685/?utm_source=chatgpt.com)
 
 ## ⚙️ 2. Adaptar el patrón a cada sección IMRaD
@@ -42,17 +41,18 @@ Esta microestructura facilita que el lector _“escanee”_ el artículo y reten
 - Ejemplo en Deep Learning: “Para evitar sobreajuste, implementamos _dropout_ (p = 0.5) en las capas densas y empleamos _early stopping_ tras 20 épocas sin mejora del F1.”
 
 ### **Resultados**
+
 - Cada párrafo comunica **un único hallazgo cuantificable**.
 - Ejemplo en GAI: “El generador basado en _transformers_ produjo ítems con un 92 % de validez semántica según tres jueces expertos.”
 
 ### **Discusión**
+
 - Cada párrafo interpreta un resultado, reconoce limitaciones o proyecta futuras líneas.
 - Ejemplo: “Los resultados muestran que el modelo de diagnóstico integrado con embeddings neuronales mejora la inferencia de atributos cognitivos, aunque requiere validación en contextos multilingües.”
 
 📖 Referencia:
 
 - Sollaci & Pereira (2004). _The introduction, methods, results, and discussion (IMRaD) structure: a fifty-year survey._ [Journal of the Medical Library Association](https://pmc.ncbi.nlm.nih.gov/articles/PMC442179/?utm_source=chatgpt.com)
-
 
 ## 🧠 3. Checklist de calidad del párrafo científico
 
@@ -65,6 +65,7 @@ Esta microestructura facilita que el lector _“escanee”_ el artículo y reten
 | **Economía**   | ¿El mensaje central aparece en posiciones fuertes (inicio y fin)? |
 
 Ejemplo de cierre eficaz en Ciencia de Datos:
+
 > “Estos hallazgos respaldan el uso de codificadores jerárquicos en contextos con escasa anotación, lo que se discute en la siguiente sección sobre generalización.”
 
 📖 Referencia:
@@ -79,7 +80,6 @@ Ejemplo de cierre eficaz en Ciencia de Datos:
 |**Ciencia de Datos**|Describir transformación o validación del pipeline|“Aplicamos validación cruzada k-fold (k = 10) para estimar la varianza de la métrica RMSE en conjuntos desbalanceados.”|
 |**Modelos de Diagnóstico Cognitivo**|Argumentar sobre interpretabilidad y ajuste|“El modelo DINA alcanzó un AUC de 0.87, confirmando la capacidad de distinguir perfiles de competencia latente.”|
 |**Generación Automática de Ítems**|Relacionar métrica de validez con criterios pedagógicos|“Los ítems generados mediante GPT-4 mostraron un α de Cronbach = 0.91, validando la coherencia interna del banco.”|
-
 
 ## 🚀 5. Recomendaciones finales
 

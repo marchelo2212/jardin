@@ -6,13 +6,13 @@ tags:
   - Constraint
   - "#MySQL"
   - "#QA"
-cssclasses: ""
 ---
 
 # Constraint
 
 ## Qué es un constraint
-Un **constraint** (restricción) es una **regla que el SGBD hace cumplir automáticamente** para proteger la **integridad de los datos**.  
+
+Un **constraint** (restricción) es una **regla que el SGBD hace cumplir automáticamente** para proteger la **integridad de los datos**.\
 Si una instrucción `INSERT`/`UPDATE` viola la regla, **la operación falla** y la base **no queda en un estado inválido**.
 
 Tres grandes objetivos que cubren los constraints:
@@ -20,7 +20,9 @@ Tres grandes objetivos que cubren los constraints:
 - **Dominio**: que cada columna tenga valores válidos (tipo, rango, obligatoriedad).
 - **Entidad**: que cada fila sea identificable de forma única.
 - **Referencia**: que las relaciones entre tablas se mantengan coherentes.
+
 ## Tipos de constraints (estándar SQL)
+
 1. **NOT NULL** – prohíbe valores nulos en una columna.
 2. **UNIQUE** – asegura que **no se repitan** valores (puede ser de **una o varias columnas**).
 3. **PRIMARY KEY** – identifica de forma única a cada fila (implícitamente `NOT NULL` + `UNIQUE`).
@@ -89,14 +91,18 @@ ALTER TABLE course DROP CHECK chk_credits;
 - **Consistencia centralizada**: protegen los datos aunque haya **múltiples aplicaciones** o usuarios conectados.
 - **Atómicas**: se aplican dentro de la transacción; no hay “ventanas” para estados inválidos.
 - **Performance**: `PRIMARY KEY` y `UNIQUE` crean índices útiles; las **FK** suelen beneficiarse de índices en las columnas referenciadas.
+
 ## Buenas prácticas
+
 - **Nombra tus constraints** (`fk_enr_course`, `chk_credits`): facilita depurar y alterar.
 - **Usa `NOT NULL` por defecto** salvo que _nulo_ tenga un significado claro.
 - **Prefiere `UNIQUE` multicolumna** para reglas como “no hay dos matrículas del mismo estudiante en el mismo curso”.
 - **Define `ON DELETE/UPDATE`** en FKs de acuerdo al negocio (`CASCADE`, `RESTRICT`, `SET NULL`).
 - **CHECK para reglas de dominio** (rangos, formatos). Para reglas complejas que cruzan varias filas/ tablas, evalúa **triggers**.
 - **Índices para FKs**: añade un índice en la columna que referencia; mejora `JOIN` y borrados/actualizaciones en cascada.
+
 ## Errores típicos
+
 - Confiar sólo en la app: otro cliente puede saltarse la validación.
 - `CHECK` en versiones antiguas de MySQL/MariaDB → no se aplicaba (ver tu versión).
 - Falta de índices en FKs → `JOIN` lentos y cascadas costosas.

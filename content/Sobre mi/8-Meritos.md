@@ -2,7 +2,6 @@
 publish: true
 created: 2025-05-28T22:08
 modified: 2025-05-28T22:08:38-05:00
-cssclasses: ""
 ---
 
 ## Becas y méritos
@@ -18,4 +17,3 @@ cssclasses: ""
 | 2018 | Becario maestría                                    | Organización de los Estados Americanos (OEA)             |
 | 2017 | Vicepresidente                                      | Asociación de Software Libre del Ecuador (ASLE)          |
 | 2016 | Secretario                                          | Asociación de Software Libre del Ecuador (ASLE)          |
-

@@ -2,36 +2,44 @@
 publish: true
 created: 2025-09-24T08:54
 modified: 2025-09-30T05:57:47-05:00
-cssclasses: ""
 ---
 
 # Tabla puente
+
 También llamada _tabla intermedia_, _junction table_ o _entidad asociativa_.
 Considere que los ejemplos descritos parten del caso de Universidad que hemos trabajo en clase.
+
 ## Qué es y para qué sirve
 
 - Es una **tabla que resuelve una relación muchos-a-muchos (N:M)** entre dos (o más) entidades del modelo.
 - Convierte esa relación N:M en **dos relaciones 1:N**, garantizando integridad y evitando duplicación.
 - Además de enlazar, puede **almacenar atributos propios de la relación** (p. ej., fecha de inscripción, rol, nota).
+
 ## Cuándo la necesitas
+
 - Cuando A ↔ B tiene cardinalidad **N:M**:
-    - _Student_ ↔ _Course_ (un estudiante cursa muchos cursos y un curso tiene muchos estudiantes) → **Enrollment**.
-    - _Libro_ ↔ _Autor_ → **BookAuthor**.
-    - **Auto-relación** N:M (seguidores en redes): _User_ ↔ _User_ → **UserFollow**.
+  - _Student_ ↔ _Course_ (un estudiante cursa muchos cursos y un curso tiene muchos estudiantes) → **Enrollment**.
+  - _Libro_ ↔ _Autor_ → **BookAuthor**.
+  - **Auto-relación** N:M (seguidores en redes): _User_ ↔ _User_ → **UserFollow**.
 - En **relaciones ternarias** (A–B–C) que requieren mantener una **combinación única de tres claves** (p. ej., _Student–Course–Semester_).
+
 ## Estructura típica
+
 Una tabla puente suele contener:
+
 1. **Claves foráneas** a las entidades que vincula (NOT NULL).
 2. **Clave primaria** que **garantiza unicidad** de la pareja (o tercia) vinculada.
 3. **Atributos de la relación** (opcionales).
 4. **Restricciones** para reflejar reglas de negocio (UNIQUE, CHECK, ON DELETE…).
+
 ### Dos patrones de clave primaria
 
 - **PK compuesta** (recomendada si solo enlazas y no necesitas referenciar la fila desde otros lados):
-    - PK = `(fk_a, fk_b)` y `UNIQUE` implícita por la PK.
+  - PK = `(fk_a, fk_b)` y `UNIQUE` implícita por la PK.
 - **PK surrogate (id autoincremental)** + `UNIQUE(fk_a, fk_b)`:
-    - Útil si la fila tendrá **muchos atributos**, si habrá **FK externas** apuntando a este enlace, o **historial**.
-## Ejemplo (MySQL/MariaDB) en el caso de Universdiad: 
+  - Útil si la fila tendrá **muchos atributos**, si habrá **FK externas** apuntando a este enlace, o **historial**.
+
+## Ejemplo (MySQL/MariaDB) en el caso de Universdiad:
 
 Student ↔ Course → Enrollment
 
@@ -71,27 +79,33 @@ CREATE INDEX idx_enr_student_course ON enrollment (student_id, course_id);
 - En el **modelo E-R** trazas una **relación N:M** entre _STUDENT_ y _COURSE_.
 - En el **modelo relacional**, esa relación se **mapea** a una **tabla asociativa** con las FKs a cada entidad.
 - Si la relación tiene atributos (p. ej., _grade_), **van en la tabla puente** (no en _student_ ni _course_).
+
 ## Reglas de negocio típicas (y cómo implementarlas)
 
 - **“Un estudiante no puede inscribirse dos veces al mismo curso”** → PK compuesta o `UNIQUE(student_id, course_id)`.
 - **“Si borro un estudiante, borro sus inscripciones”** → `ON DELETE CASCADE` en `fk_enr_student`.
 - **“Si un curso tiene historial, no se puede borrar”** → `ON DELETE RESTRICT` en `fk_enr_course`.
 - **“La nota debe ser 0–100”** → `CHECK (grade BETWEEN 0 AND 100)`.
+
 ## Buenas prácticas
+
 - **Nombre descriptivo**: `enrollment`, `book_author`, `user_follow` (o `student_course` si prefieres compuesto).
 - **FKs NOT NULL** (la relación no existe sin ambos lados).
 - **Unicidad** del par/terna con PK compuesta o `UNIQUE`.
 - **Índices** alineados a los JOIN y filtros más usados.
 - **Evitar datos derivados** en la puente (p. ej., totales que se pueden calcular).
 - **Transacciones** al insertar desde múltiples sesiones para que el `UNIQUE` evite “doble vínculo” por carrera de concurrencia.
+
 ## ¿Es una entidad débil?
+
 - No por definición. Es una **entidad asociativa**.
 - Puede _comportarse como débil_ si su identidad depende completamente de las FKs y no tiene clave propia; aun así, en la práctica la nombramos **tabla puente** o **entidad asociativa** para N:M.
 
 # Constraint
 
 ## Qué es un constraint
-Un **constraint** (restricción) es una **regla que el SGBD hace cumplir automáticamente** para proteger la **integridad de los datos**.  
+
+Un **constraint** (restricción) es una **regla que el SGBD hace cumplir automáticamente** para proteger la **integridad de los datos**.\
 Si una instrucción `INSERT`/`UPDATE` viola la regla, **la operación falla** y la base **no queda en un estado inválido**.
 
 Tres grandes objetivos que cubren los constraints:
@@ -99,7 +113,9 @@ Tres grandes objetivos que cubren los constraints:
 - **Dominio**: que cada columna tenga valores válidos (tipo, rango, obligatoriedad).
 - **Entidad**: que cada fila sea identificable de forma única.
 - **Referencia**: que las relaciones entre tablas se mantengan coherentes.
+
 ## Tipos de constraints (estándar SQL)
+
 1. **NOT NULL** – prohíbe valores nulos en una columna.
 2. **UNIQUE** – asegura que **no se repitan** valores (puede ser de **una o varias columnas**).
 3. **PRIMARY KEY** – identifica de forma única a cada fila (implícitamente `NOT NULL` + `UNIQUE`).
@@ -168,14 +184,18 @@ ALTER TABLE course DROP CHECK chk_credits;
 - **Consistencia centralizada**: protegen los datos aunque haya **múltiples aplicaciones** o usuarios conectados.
 - **Atómicas**: se aplican dentro de la transacción; no hay “ventanas” para estados inválidos.
 - **Performance**: `PRIMARY KEY` y `UNIQUE` crean índices útiles; las **FK** suelen beneficiarse de índices en las columnas referenciadas.
+
 ## Buenas prácticas
+
 - **Nombra tus constraints** (`fk_enr_course`, `chk_credits`): facilita depurar y alterar.
 - **Usa `NOT NULL` por defecto** salvo que _nulo_ tenga un significado claro.
 - **Prefiere `UNIQUE` multicolumna** para reglas como “no hay dos matrículas del mismo estudiante en el mismo curso”.
 - **Define `ON DELETE/UPDATE`** en FKs de acuerdo al negocio (`CASCADE`, `RESTRICT`, `SET NULL`).
 - **CHECK para reglas de dominio** (rangos, formatos). Para reglas complejas que cruzan varias filas/ tablas, evalúa **triggers**.
 - **Índices para FKs**: añade un índice en la columna que referencia; mejora `JOIN` y borrados/actualizaciones en cascada.
+
 ## Errores típicos
+
 - Confiar sólo en la app: otro cliente puede saltarse la validación.
 - `CHECK` en versiones antiguas de MySQL/MariaDB → no se aplicaba (ver tu versión).
 - Falta de índices en FKs → `JOIN` lentos y cascadas costosas.
@@ -233,14 +253,14 @@ EXIT;
 Dentro de tu proyecto:
 Considera que podría estár en cualquier carpeta, pero, para ser ordenado/a, podría ser recomendable ubicarlos en la carpeta html:
 `cd /var/www/html`
-Luego de ello: 
+Luego de ello:
+
 ```bash
 cd /var/www/html
 mkdir -p proyecto/sql
 cd proyecto/sql
 touch 01_schema.sql 02_seed.sql 03_queries.sql
 ```
-
 
 ## 3) Contenido de ejemplo (Universidad)
 
@@ -396,7 +416,6 @@ mysql -u dev -p --database=uni_db < 03_queries.sql
 ```
 
 > ⚠️ Recuerda: el **orden importa** → primero el esquema, luego los datos, después las consultas.
-
 
 ## 5) Integración con proyecto LAMP
 

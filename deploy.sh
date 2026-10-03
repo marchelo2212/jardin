@@ -3,54 +3,30 @@ set -e
 
 # RUTAS
 QUARTZ_REPO="/Users/marcelosotaminga/Documents/proyectos-github/mi-quartz"
-PAGES_REPO="/Users/marcelosotaminga/Documents/proyectos-github/marchelo2212.github.io"
 
 echo "🧭 Cambiando a repo Quartz..."
 cd "$QUARTZ_REPO"
 
-echo "🌿 Cambiando a rama v4..."
+echo "🌿 Asegurando rama v4..."
 git checkout v4
+
+echo "⬇️ Sincronizando con GitHub (por cambios de Quartz Syncer)..."
+git pull --rebase origin v4
 
 echo "🔍 Revisando cambios locales en Quartz..."
 if [ -n "$(git status --porcelain)" ]; then
   echo "📌 Hay cambios locales en Quartz. Haciendo commit..."
   git add .
-  git commit -m "Cambios locales en Quartz antes de deploy (fix baseUrl)"
+  git commit -m "Update Quartz notes and config"
+  echo "📤 Subiendo a GitHub (jardin)..."
+  git push origin v4
+  echo "🚀 ¡Cambios enviados a GitHub!"
 else
-  echo "✅ No hay cambios locales en Quartz."
+  echo "✅ Todo sincronizado. No hay cambios pendientes."
 fi
 
-echo "⬇️  Haciendo pull..."
-git pull --rebase origin v4
-
-# --- MEJORA AQUÍ ---
-echo "🧹 Limpiando caché local de Quartz..."
-rm -rf public
-
-echo "🧱 Generando sitio con Quartz..."
-npx quartz build
-# -------------------
-
-echo "📦 Copiando resultado al repo de GitHub Pages..."
-
-# 1. Entramos al repo de destino
-cd "$PAGES_REPO"
-
-# 2. Borramos todo EXCEPTO la carpeta .git (para no romper el repo)
-# Usamos un método más compatible con macOS
-ls -A | grep -v ".git" | xargs rm -rf
-
-# 3. Volvemos al repo de Quartz para copiar
-cd "$QUARTZ_REPO"
-
-# 4. Copiamos el contenido de public al repo de destino
-cp -R public/. "$PAGES_REPO"/
-
-echo "📤 Haciendo commit y push en marchelo2212.github.io..."
-cd "$PAGES_REPO"
-# ... resto del código de git push ...
-git add .
-git commit -m "Deploy automático: limpieza de caché y corrección de baseUrl" || echo "ℹ️ No hay cambios nuevos."
-git push
-
-echo "✅ Deploy completado. Revisa https://marchelo2212.github.io"
+echo ""
+echo "======================================================================"
+echo "🌱 GitHub Actions compila y despliega automáticamente tu jardín en:"
+echo "   👉 https://marchelo2212.github.io/jardin/"
+echo "======================================================================"

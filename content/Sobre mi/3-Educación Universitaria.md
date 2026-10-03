@@ -2,7 +2,6 @@
 publish: true
 created: 2025-05-28T21:28
 modified: 2025-07-31T11:52:09-05:00
-cssclasses: ""
 ---
 
 ## Educación Universitaria

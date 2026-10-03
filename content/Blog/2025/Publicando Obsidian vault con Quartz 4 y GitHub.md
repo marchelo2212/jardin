@@ -2,14 +2,13 @@
 publish: true
 created: 2025-12-01T17:30
 modified: 2025-12-01T17:52:11-05:00
-cssclasses: ""
 ---
 
 # 🚀 Migrando mi Obsidian Vault a un sitio web estático con Quartz 4, GitHub Pages y automatización total
 
 En este artículo cuento el proceso completo que seguí para transformar mi _vault_ de Obsidian en un sitio web estático moderno usando **Quartz 4**, desplegarlo en **GitHub Pages**, automatizar la subida con **scripts**, e integrar sincronización directa con Obsidian gracias al plugin **Quartz Syncer**.
 
-Fue un camino lleno de decisiones, ajustes técnicos y descubrimientos útiles, así que aquí dejo todos los pasos documentados.  
+Fue un camino lleno de decisiones, ajustes técnicos y descubrimientos útiles, así que aquí dejo todos los pasos documentados.\
 Ojalá le sirva a otros que quieran hacer algo similar.
 
 # 🗂️ 1. Preparando el entorno
@@ -25,6 +24,7 @@ Para esto usé:
 - **Quartz 4 (nuevo framework, no basado en Hugo)**
 - **GitHub Pages**
 - (Opcional) Un servidor VPS con Plesk ( no llegué a usarlo, me animé por GitHub Pages)
+
 # 📦 2. Instalando Quartz 4 en mi Mac
 
 Quartz no se instala como un paquete global. Simplemente clonas la plantilla y trabajas dentro:
@@ -51,7 +51,7 @@ Tenía mi vault en:
 /Users/…/Nextcloud/obsidian-MHO2212
 ```
 
-Y quería que Quartz usara la subcarpeta `Public/` como contenido del sitio.  
+Y quería que Quartz usara la subcarpeta `Public/` como contenido del sitio.\
 En Quartz, la carpeta que actúa como contenedor de notas es siempre:
 
 ```
@@ -174,9 +174,8 @@ Esto permite usar directamente:
 <iframe src="..."></iframe>
 ```
 
-Aunque descubrimos que **Brave y algunos bloqueadores** impiden que los iframes de LinkedIn carguen correctamente, pero esto es por la seguridad de los navegadores no de Quartz, la solución que halle fue permitir los iframe. 
+Aunque descubrimos que **Brave y algunos bloqueadores** impiden que los iframes de LinkedIn carguen correctamente, pero esto es por la seguridad de los navegadores no de Quartz, la solución que halle fue permitir los iframe.
 ![](https://i.imgur.com/rOYSDZe.png)
-
 
 # 📤 6. Subiendo el sitio a GitHub
 
@@ -191,7 +190,7 @@ git commit -m "Inicializando Quartz"
 git push -u origin v4
 ```
 
-🚨 Importante:  
+🚨 Importante:\
 GitHub ya no acepta contraseñas → usar **Tokens (PAT)**.
 
 # 🌐 7. Configurar GitHub Pages con Quartz
@@ -317,7 +316,7 @@ echo "✅ Deploy completado. Revisa https://marchelo2212.github.io"
 
 En vez de usar enlaces simbólicos (primera opción que tomé), instalé el plugin:
 
-👉 [https://saberzero1.github.io/quartz-syncer-docs/](https://saberzero1.github.io/quartz-syncer-docs/)
+👉 <https://saberzero1.github.io/quartz-syncer-docs/>
 
 Este plugin permite:
 
@@ -363,7 +362,7 @@ Component.Flex({
 ```
 
 Pueden ver los resultados en [https://marchelo2212.github.io](https://marchelo2212.github.io/)
-Aquí el repo de mi quartz, donde podrán ver las modificaciones hechas en él: [GitHub - marchelo2212/mi-quartz: mi-quartz](https://github.com/marchelo2212/mi-quartz) 
+Aquí el repo de mi quartz, donde podrán ver las modificaciones hechas en él: [GitHub - marchelo2212/mi-quartz: mi-quartz](https://github.com/marchelo2212/mi-quartz)
 
 # ✔️ 11. Resultado final
 
@@ -372,13 +371,12 @@ Ahora tengo un flujo así:
 1. Escribo notas en Obsidian → dentro de `Public/`
 2. Quartz Syncer detecta cambios → los envía al repo en `v4` (main)
 3. Ejecuto mi `deploy.sh`. para llevar de quartz a mi sitio web
-	1. GitHub Actions construye Quartz
-	2. GitHub Pages actualiza el sitio
-4. El sitio queda publicado en:  
-    👉 [https://marchelo2212.github.io](https://marchelo2212.github.io/)
-Todo **sin tocar terminal** si no quiero.  
-Y si quiero ajustes técnicos, puedo usar `deploy.sh`.
-
+   1. GitHub Actions construye Quartz
+   2. GitHub Pages actualiza el sitio
+4. El sitio queda publicado en:\
+   👉 [https://marchelo2212.github.io](https://marchelo2212.github.io/)
+   Todo **sin tocar terminal** si no quiero.\
+   Y si quiero ajustes técnicos, puedo usar `deploy.sh`.
 
 # 📌 Conclusiones y aprendizajes
 
@@ -387,4 +385,3 @@ Y si quiero ajustes técnicos, puedo usar `deploy.sh`.
 - Obsidian + Quartz Syncer convierte tu vault en un CMS real.
 - Los bloqueadores como Brave afectan mucho los embeds.
 - Personalizar Quartz es tan simple como editar TS/SCSS.
-
