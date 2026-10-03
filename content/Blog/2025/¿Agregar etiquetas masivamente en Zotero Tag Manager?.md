@@ -9,20 +9,19 @@ tags:
   - investigación
   - Research
   - Tools
-cssclasses: ""
 ---
 
 # 🧩 ¿Cómo agregar etiquetas masivamente en Zotero Tag Manager?
 
 ## 📚 Contexto
 
-Organizar referencias en **Zotero** puede volverse complejo cuando manejas una gran cantidad de documentos académicos, artículos o informes.  
+Organizar referencias en **Zotero** puede volverse complejo cuando manejas una gran cantidad de documentos académicos, artículos o informes.\
 Si dependes únicamente de las **colecciones**, pronto te encontrarás con una jerarquía interminable de carpetas y subcarpetas difíciles de mantener.
 
-Una solución mucho más flexible es utilizar **etiquetas (tags)**. Las etiquetas permiten clasificar los elementos de manera transversal:  
+Una solución mucho más flexible es utilizar **etiquetas (tags)**. Las etiquetas permiten clasificar los elementos de manera transversal:\
 un mismo documento puede pertenecer a múltiples categorías, temas o proyectos, sin necesidad de duplicarlo en distintas colecciones.
 
-El complemento **[Zotero Tag Manager](https://github.com/windingwind/zotero-tag)** mejora enormemente el manejo de etiquetas al permitir buscarlas, filtrarlas, renombrarlas o eliminar varias de una vez.  
+El complemento **[Zotero Tag Manager](https://github.com/windingwind/zotero-tag)** mejora enormemente el manejo de etiquetas al permitir buscarlas, filtrarlas, renombrarlas o eliminar varias de una vez.\
 Sin embargo, tiene una limitación: **por defecto no incluye la función de agregar una etiqueta a varios elementos simultáneamente.**
 
 ---
@@ -31,7 +30,7 @@ Sin embargo, tiene una limitación: **por defecto no incluye la función de agre
 
 **Agregar etiquetas a varios elementos de una sola vez.**
 
-Aunque Zotero permite etiquetar ítems individualmente, no hay una opción nativa dentro de **Zotero Tag Manager** para aplicar una o más etiquetas a una selección múltiple.  
+Aunque Zotero permite etiquetar ítems individualmente, no hay una opción nativa dentro de **Zotero Tag Manager** para aplicar una o más etiquetas a una selección múltiple.\
 Esto hace que, si estás organizando grandes bibliotecas, tengas que repetir el proceso docenas de veces, perdiendo tiempo y coherencia en tu sistema de clasificación.
 
 ---
@@ -42,7 +41,7 @@ Usar etiquetas en lugar de depender exclusivamente de colecciones ofrece múltip
 
 - **Flexibilidad total:** un mismo ítem puede tener múltiples etiquetas sin necesidad de estar en varias carpetas.
 - **Organización transversal:** las etiquetas permiten relacionar documentos por tema, autor, método, o tipo de fuente, sin moverlos de su colección original.
-- **Filtrado rápido:** puedes combinar varias etiquetas para hacer búsquedas complejas (por ejemplo, *"método cualitativo" + "educación secundaria"*).
+- **Filtrado rápido:** puedes combinar varias etiquetas para hacer búsquedas complejas (por ejemplo, _"método cualitativo" + "educación secundaria"_).
 - **Estandarización:** es posible mantener un vocabulario controlado de etiquetas, asegurando coherencia terminológica.
 - **Automatización:** las etiquetas pueden usarse para activar acciones, crear listas dinámicas, o integrarse con otros flujos de trabajo mediante plugins y scripts.
 
@@ -50,7 +49,7 @@ Usar etiquetas en lugar de depender exclusivamente de colecciones ofrece múltip
 
 ## ⚙️ Pasos para agregar el script en Zotero Tag Manager
 
-1. Abre **Zotero** y ve al menú:  
+1. Abre **Zotero** y ve al menú:\
    `Editar → Preferencias → Actions & Tags` (o desde la barra superior si ya tienes el panel abierto).
 
 2. Crea una **nueva acción**:
@@ -75,6 +74,7 @@ Usar etiquetas en lugar de depender exclusivamente de colecciones ofrece múltip
      ![](https://i.imgur.com/Tm5F3IO.png)
    - Podrás ver cómo aparecen en tu ventana de etiquetas -si la tienes activa-
    - ![](https://i.imgur.com/x5gC3Q2.png)
+
 ---
 
 ## 💻 Código a emplear
@@ -193,7 +193,6 @@ _Pega aquí tu script corregido que añade etiquetas masivamente y evita el trip
 
 
 ```
-
 
 Espero que te haya sido de utilidad
 

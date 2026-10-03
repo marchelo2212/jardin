@@ -6,15 +6,16 @@ tags:
   - BBDD
   - Resources
   - Students
-cssclasses: ""
 ---
+
+↩️  [[Teaching/Unisabana/BBDD/BBDD-Planificacion/index|index]]
 
 # Base de datos - Guías de estudio
 
-**Regresar al organizador gráfico, clic aquí:** [[Teaching/Unisabana/BBDD/BBDD-Recursos]]
+**Regresar al organizador gráfico, clic aquí:** [[BBDD-Recursos]]
 
 Ciertas guías pueden tener ecuaciones escritas en $Latex$ por lo que para visualizar correctamente las mismas se deberá instalar este complemento en su cuenta de Google Drive (desde Google docs)
-[Auto-LaTeX Equations - Google Workspace Marketplace](https://workspace.google.com/marketplace/app/autolatex_equations/850293439076?hl=en&pann=docs_addon_widget&ref=sidebar_review)
+[Auto-LaTeX Equations - Google Workspace Marketplace](https://workspace.google.com/marketplace/app/autolatex_equations/850293439076?hl=en\&pann=docs_addon_widget\&ref=sidebar_review)
 
 ![300](https://i.imgur.com/EqVhCyU.png)
 
@@ -22,5 +23,4 @@ Ciertas guías pueden tener ecuaciones escritas en $Latex$ por lo que para visua
 
 Clic aquí para acceder a la [Guías de estudio Base de datos](https://drive.google.com/drive/folders/1_XqCMCTbviwToJjwKtxdAIiTFLxawsjT?usp=sharing)
 
-
-
+↩️  [[Teaching/Unisabana/BBDD/BBDD-Planificacion/index|index]]

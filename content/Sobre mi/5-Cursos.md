@@ -2,12 +2,11 @@
 publish: true
 created: 2025-07-28T01:33
 modified: 2025-12-12T10:34:17-05:00
-cssclasses: ""
 ---
-
 
 | Nombre                                                                              | Tipo      | Institución                                           | Tipo Certificado | Inicio             | Fin               | Horas |
 | ----------------------------------------------------------------------------------- | --------- | ----------------------------------------------------- | ---------------- | ------------------ | ----------------- | ----- |
+| IA para automatizar tareas académicas y administrativas                             | curso     | Grupo editorial ECOE Ediciones S.A.S                  | aprobación       | August 13, 2026    | August 13, 2026   | -    |
 | Second International Conference on Emerging Technologies and Educational Innovation | congreso  | Red de Educación con Tecnologías Emergentes           | aprobación       | November 13, 2025  | November 14, 2025 | 20    |
 | De la Idea al Paper Fundamentos para la Redacción de Artículos                      | curso     | Pontificia Universidad Católica del Ecuador           | aprobación       | May 26, 2025       | June 27, 2025     | 40    |
 | Diplomado en Inteligencia Artificial con Deep Learning                              | otros     | Universidad de La Sabana                              | aprobación       | March 01, 2025     | June 17, 2025     | 96    |
@@ -22,4 +21,3 @@ cssclasses: ""
 | El rol de la comunicación en la gestión política                                    | seminario | UTPL - Edes Bussines School                           | aprobación       | November 06, 2021  | November 06, 2021 | 8     |
 | Riesgo ergonómico                                                                   | curso     | ChildFund International                               | aprobación       | August 17, 2021    | August 17, 2021   | 2     |
 | Introducción a los Datos Abiertos en el Ecuador                                     | curso     | Red Ecuatoriana de Datos Abiertos y Metadatos (REDAM) | aprobación       | May 28, 2021       | June 25, 2021     | 25    |
-

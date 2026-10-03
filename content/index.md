@@ -4,17 +4,15 @@ title: Marcelo Sotaminga | Innovación, Tecnología, IA y Educación
 description: "Sitio web oficial de Marcelo Sotaminga: consultor, docente e investigador en Innovación, Transformación Digital, Inteligencia Artificial, Ciencia de Datos y Educación"
 created: 2025-11-29T21:02
 modified: 2025-12-02T06:09:32-05:00
-cssclasses: ""
 ---
 
 # 👋 Hola, soy **Marcelo Sotaminga-Cinilin**
 
 > [!quote] Propósito
-> Potenciar el aprendizaje, impulsar la transformación digital y acompañar procesos de innovación  
+> Potenciar el aprendizaje, impulsar la transformación digital y acompañar procesos de innovación\
 > desde una perspectiva **humana, ética y basada en evidencia**.
 
- 
-Soy **consultor**, **docente universitario** e **investigador** en el cruce entre **Innovación, Tecnología, Inteligencia Artificial, Educación y Gestión del Conocimiento**.  
+Soy **consultor**, **docente universitario** e **investigador** en el cruce entre **Innovación, Tecnología, Inteligencia Artificial, Educación y Gestión del Conocimiento**.\
 Este sitio es mi **espacio digital abierto**, donde conecto proyectos, ideas, recursos y experiencias.
 
 ## 🧭 A simple vista
@@ -30,47 +28,48 @@ Este sitio es mi **espacio digital abierto**, donde conecto proyectos, ideas, re
 
 > [!example] 📘 **Blog**
 > Ideas, análisis e investigación aplicada sobre:
-> - Inteligencia Artificial y Ciencia de Datos  
-> - Innovación educativa y transformación digital  
-> - Tecnologías emergentes  
-> - Gestión del conocimiento  
-> - Educación abierta, STEAM y pensamiento computacional  
+>
+> - Inteligencia Artificial y Ciencia de Datos
+> - Innovación educativa y transformación digital
+> - Tecnologías emergentes
+> - Gestión del conocimiento
+> - Educación abierta, STEAM y pensamiento computacional
 >
 > 👉 **[[Blog/index]]**
-	
 
 > [!tip] 🧩 **Proyectos & Consultorías**
 > Portafolio con experiencias junto a:
-> - Ministerios y gobiernos  
-> - Organismos multilaterales (BID, UNESCO, OEI)  
-> - Universidades, ONG y empresas  
 >
-> Incluye **casos de estudio, soluciones tecnológicas, modelos tecnopedagógicos y resultados de impacto**.  
+> - Ministerios y gobiernos
+> - Organismos multilaterales (BID, UNESCO, OEI)
+> - Universidades, ONG y empresas
+>
+> Incluye **casos de estudio, soluciones tecnológicas, modelos tecnopedagógicos y resultados de impacto**.
 >
 > 👉 **[Ver proyectos](/proyectos/)**
 
-
 > [!note] 🎓 **Recursos para estudiantes y docentes**
 > Material abierto y reutilizable:
-> - REA / OVAs  
-> - Guías metodológicas  
-> - Kits de IA, datos y análisis  
-> - Recursos para programación, PC y STEAM  
-> - Plantillas, rúbricas y herramientas prácticas  
+>
+> - REA / OVAs
+> - Guías metodológicas
+> - Kits de IA, datos y análisis
+> - Recursos para programación, PC y STEAM
+> - Plantillas, rúbricas y herramientas prácticas
 >
 > 👉 **[Acceder a recursos](/recursos/)**
 
 > [!abstract] 🧪 **Investigación & Academia**
-> Estudiante de **Doctorado en Ingeniería (Universidad de La Sabana)** y docente universitario.  
+> Estudiante de **Doctorado en Ingeniería (Universidad de La Sabana)** y docente universitario.
 >
 > Aquí comparto:
-> - Publicaciones académicas  
-> - Investigación en curso  
-> - Notas de lectura y *Research Notes*  
-> - Participación en congresos y ponencias  
+>
+> - Publicaciones académicas
+> - Investigación en curso
+> - Notas de lectura y _Research Notes_
+> - Participación en congresos y ponencias
 >
 > 👉 **[Ver perfil académico](/about/publicaciones/)**
-
 
 ## 🧠 Sobre mí
 
@@ -79,28 +78,28 @@ Este sitio es mi **espacio digital abierto**, donde conecto proyectos, ideas, re
 
 He liderado y acompañado proyectos en áreas como:
 
-- Tecnologías emergentes  
-- Sistemas educativos digitales  
-- Ciencia de datos aplicada  
-- IA responsable  
-- Innovación pública  
-- Modelos tecnopedagógicos  
-- Gestión del conocimiento  
+- Tecnologías emergentes
+- Sistemas educativos digitales
+- Ciencia de datos aplicada
+- IA responsable
+- Innovación pública
+- Modelos tecnopedagógicos
+- Gestión del conocimiento
 
-👉 **[Conocer más sobre mí](/about/biografia/)**  
-👉 **[Ver CV vivo](/about/cv/)**  
+👉 **[Conocer más sobre mí](/about/biografia/)**\
+👉 **[Ver CV vivo](/about/cv/)**
 
 ---
 
 ## 🔍 Cómo está construido este sitio
 
-Este espacio es parte de mi proceso de **gestión personal del conocimiento**.  
+Este espacio es parte de mi proceso de **gestión personal del conocimiento**.\
 Funciona como:
 
-- 📝 **Blog vivo**  
-- 📁 **Portafolio de proyectos**  
-- 📚 **Repositorio de recursos**  
-- 🔬 **Bitácora de investigación**  
+- 📝 **Blog vivo**
+- 📁 **Portafolio de proyectos**
+- 📚 **Repositorio de recursos**
+- 🔬 **Bitácora de investigación**
 - 🎓 **CV académico-profesional dinámico**
 
 Utilizo **Obsidian** como “cerebro digital” y **Quartz** como capa pública para compartir lo que aprendo y creo.
@@ -111,11 +110,11 @@ Utilizo **Obsidian** como “cerebro digital” y **Quartz** como capa pública 
 
 Estoy abierto a propuestas de:
 
-- Consultoría en educación, innovación, IA y tecnología  
-- Diseño e implementación de modelos formativos  
-- Transformación digital en organizaciones  
-- Investigación y proyectos TIC/TAC/TEP  
-- Formación docente y capacitación profesional  
+- Consultoría en educación, innovación, IA y tecnología
+- Diseño e implementación de modelos formativos
+- Transformación digital en organizaciones
+- Investigación y proyectos TIC/TAC/TEP
+- Formación docente y capacitación profesional
 
 > [!tip] Si tienes una idea, un reto o un proyecto…
 > Escríbeme y lo conversamos.
@@ -126,10 +125,10 @@ Estoy abierto a propuestas de:
 
 ## 🌐 Datos de contacto
 
-- **LinkedIn:** [linkedin.com/in/marchelo2212/](https://www.linkedin.com/in/marchelo2212/)  
-- **Twitter/X:** [x.com/Marchelo2212](https://x.com/Marchelo2212)  
-- **ORCID:** [0000-0003-4250-906X](https://orcid.org/0000-0003-4250-906X)  
-- **Email:** [marcelo.sotaminga@gmail.com](mailto:marcelo.sotaminga@gmail.com)
+- **LinkedIn:** [linkedin.com/in/marchelo2212/](https://www.linkedin.com/in/marchelo2212/)
+- **Twitter/X:** [x.com/Marchelo2212](https://x.com/Marchelo2212)
+- **ORCID:** [0000-0003-4250-906X](https://orcid.org/0000-0003-4250-906X)
+- **Email:** <marcelo.sotaminga@gmail.com>
 
 ---
 

@@ -6,7 +6,6 @@ tags:
   - moodle
   - problem
   - admin
-cssclasses: ""
 ---
 
 # 🚀 Nueva exigencia de PHP en Moodle: cómo resolver el error de Composer en Plesk
@@ -123,6 +122,7 @@ Así garantizas coherencia entre:
 # 🧠 Conclusión
 
 La “novedad” no es realmente un bug de Moodle, sino una consecuencia natural de la evolución del ecosistema PHP:
+
 - Moodle exige versiones modernas.
 - Composer valida estrictamente los requisitos.
 - Plesk permite múltiples versiones simultáneas.

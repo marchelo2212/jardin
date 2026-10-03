@@ -2,7 +2,6 @@
 publish: true
 created: 2026-02-16T09:55
 modified: 2026-02-21T16:11
-cssclasses: ""
 ---
 
 # 📌 Proyecto Integrador – Asignatura Base de Datos
@@ -17,10 +16,10 @@ El proyecto será el eje articulador del curso y permitirá aplicar progresivame
 
 - Se conformarán grupos de **3 o 4 estudiantes**.
 - Cada grupo deberá:
-    - Identificar una problemática u oportunidad relacionada con la gestión de datos.
-    - Definir claramente el alcance del proyecto.
-    - Justificar la pertinencia de la solución propuesta.
-    - Desarrollar la base de datos siguiendo las etapas metodológicas vistas en la asignatura.
+  - Identificar una problemática u oportunidad relacionada con la gestión de datos.
+  - Definir claramente el alcance del proyecto.
+  - Justificar la pertinencia de la solución propuesta.
+  - Desarrollar la base de datos siguiendo las etapas metodológicas vistas en la asignatura.
 
 ## 3. Desarrollo del Proyecto
 
@@ -88,6 +87,5 @@ Este proyecto busca que el estudiante:
 - Fortalezca habilidades de análisis y resolución de problemas.
 - Mejore sus competencias de trabajo en equipo y comunicación técnica.
 - Experimente un proceso similar al desarrollo profesional en ingeniería.
-
 
 Este proyecto constituye el eje central de la asignatura y será fundamental para consolidar los conocimientos adquiridos durante el semestre.

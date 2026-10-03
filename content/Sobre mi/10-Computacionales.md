@@ -2,7 +2,6 @@
 publish: true
 created: 2025-05-28T22:23
 modified: 2025-09-17T08:27:52-05:00
-cssclasses: ""
 ---
 
 ## Habilidades computacionales

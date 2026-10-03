@@ -1,13 +1,12 @@
 ---
 publish: true
 created: 2026-03-10T16:38
-modified: 2026-03-11T00:57
+modified: 2026-04-05T09:34
 tags:
   - IA
   - NotebookLM
   - herramienta
   - tips
-cssclasses: ""
 ---
 
 ## 🚀 Cómo hackear tu aprendizaje: El método de "Cero a Experto" con NotebookLM

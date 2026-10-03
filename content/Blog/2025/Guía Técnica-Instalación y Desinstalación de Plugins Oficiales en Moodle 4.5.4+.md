@@ -7,7 +7,6 @@ tags:
   - Guía
   - plugins
   - instalación
-cssclasses: ""
 ---
 
 # Guía Técnica: Instalación y Desinstalación de Plugins Oficiales en Moodle 4.5.4+
@@ -22,10 +21,10 @@ La correcta gestión de plugins es crucial para mantener la estabilidad, segurid
 
 Antes de iniciar el proceso de instalación o desinstalación de plugins, asegúrese de cumplir con los siguientes requisitos:
 
-*   **Acceso de Administrador:** Debe tener acceso a una cuenta de usuario con privilegios de administrador en su instancia de Moodle 4.5.4+.
-*   **Conexión a Internet:** La plataforma Moodle debe tener acceso a Internet para descargar plugins directamente desde el directorio de plugins de Moodle.org o para verificar la compatibilidad de los plugins cargados manualmente.
-*   **Archivos de Plugin (para instalación manual):** Si el plugin no se instala directamente desde el directorio de Moodle, debe tener el archivo ZIP del plugin descargado de una fuente confiable (como Moodle.org o el proveedor del plugin) y compatible con su versión de Moodle.
-*   **Copia de Seguridad:** **Es fundamental realizar una copia de seguridad completa de su sitio Moodle (archivos y base de datos) antes de instalar o desinstalar cualquier plugin.** Esto le permitirá restaurar su plataforma a un estado anterior en caso de que surja algún problema inesperado. [3]
+- **Acceso de Administrador:** Debe tener acceso a una cuenta de usuario con privilegios de administrador en su instancia de Moodle 4.5.4+.
+- **Conexión a Internet:** La plataforma Moodle debe tener acceso a Internet para descargar plugins directamente desde el directorio de plugins de Moodle.org o para verificar la compatibilidad de los plugins cargados manualmente.
+- **Archivos de Plugin (para instalación manual):** Si el plugin no se instala directamente desde el directorio de Moodle, debe tener el archivo ZIP del plugin descargado de una fuente confiable (como Moodle.org o el proveedor del plugin) y compatible con su versión de Moodle.
+- **Copia de Seguridad:** **Es fundamental realizar una copia de seguridad completa de su sitio Moodle (archivos y base de datos) antes de instalar o desinstalar cualquier plugin.** Esto le permitirá restaurar su plataforma a un estado anterior en caso de que surja algún problema inesperado. \[3]
 
 ## Instalación de Plugins desde la Interfaz Web
 
@@ -52,8 +51,7 @@ En la página de instalación de plugins, haga clic en el botón **Instalar plug
 ![Moodle Install Plugins from Moodle Plugins Directory](/home/ubuntu/upload/search_images/9LAgA6uWhojp.jpg)
 _Figura 3: Opción para instalar plugins desde el directorio de Moodle._
 
-Esto le redirigirá al directorio de plugins de Moodle.org. Busque el plugin deseado (por ejemplo, 
-
+Esto le redirigirá al directorio de plugins de Moodle.org. Busque el plugin deseado (por ejemplo,
 
 Certificado personalizado) y haga clic en el botón **Instalar ahora**.
 
@@ -114,16 +112,16 @@ Una vez desinstalado, Moodle le informará que el plugin ha sido eliminado. Es p
 
 Para asegurar que los plugins funcionen correctamente y no afecten negativamente a la plataforma Moodle, considere las siguientes buenas prácticas:
 
-*   **Realice Copias de Seguridad Regularmente:** Antes de cualquier cambio significativo (instalación, actualización o desinstalación de plugins), realice siempre una copia de seguridad completa de su sitio Moodle. Esto es su red de seguridad. [3]
-*   **Descargue Plugins de Fuentes Confiables:** Obtenga plugins únicamente del directorio oficial de Moodle.org o de proveedores de confianza. Evite descargar plugins de sitios web no verificados, ya que podrían contener código malicioso o ser incompatibles. [4]
-*   **Verifique la Compatibilidad:** Antes de instalar un plugin, asegúrese de que sea compatible con su versión específica de Moodle (4.5.4+ en este caso). La página de cada plugin en Moodle.org suele indicar las versiones de Moodle compatibles. [5]
-*   **Pruebe en un Entorno de Desarrollo/Staging:** Si es posible, pruebe los nuevos plugins en un entorno de desarrollo o staging antes de implementarlos en su sitio de producción. Esto le permite identificar y resolver cualquier problema sin afectar a los usuarios en vivo. [6]
-*   **Lea la Documentación del Plugin:** Cada plugin puede tener requisitos o configuraciones específicas. Lea la documentación proporcionada por el desarrollador del plugin para comprender su funcionamiento y configurarlo correctamente. [7]
-*   **Mantenga los Plugins Actualizados:** Los desarrolladores de plugins lanzan actualizaciones para corregir errores, mejorar el rendimiento y abordar vulnerabilidades de seguridad. Mantenga sus plugins actualizados para asegurar la estabilidad y seguridad de su plataforma. [8]
-*   **Desinstale Plugins No Utilizados:** Los plugins no utilizados pueden representar un riesgo de seguridad o afectar el rendimiento de su sitio. Desinstale cualquier plugin que ya no necesite. [9]
-*   **Monitoree el Rendimiento:** Después de instalar nuevos plugins, monitoree el rendimiento de su sitio Moodle para detectar cualquier degradación. Algunos plugins pueden ser intensivos en recursos y afectar la velocidad de carga. [10]
-*   **Revise los Registros de Errores:** Consulte regularmente los registros de errores de Moodle y del servidor web para identificar cualquier problema relacionado con los plugins. [11]
-*   **Considere la Seguridad:** Algunos plugins pueden introducir vulnerabilidades. Asegúrese de que los plugins que instale sigan las mejores prácticas de seguridad de Moodle. [12]
+- **Realice Copias de Seguridad Regularmente:** Antes de cualquier cambio significativo (instalación, actualización o desinstalación de plugins), realice siempre una copia de seguridad completa de su sitio Moodle. Esto es su red de seguridad. \[3]
+- **Descargue Plugins de Fuentes Confiables:** Obtenga plugins únicamente del directorio oficial de Moodle.org o de proveedores de confianza. Evite descargar plugins de sitios web no verificados, ya que podrían contener código malicioso o ser incompatibles. \[4]
+- **Verifique la Compatibilidad:** Antes de instalar un plugin, asegúrese de que sea compatible con su versión específica de Moodle (4.5.4+ en este caso). La página de cada plugin en Moodle.org suele indicar las versiones de Moodle compatibles. \[5]
+- **Pruebe en un Entorno de Desarrollo/Staging:** Si es posible, pruebe los nuevos plugins en un entorno de desarrollo o staging antes de implementarlos en su sitio de producción. Esto le permite identificar y resolver cualquier problema sin afectar a los usuarios en vivo. \[6]
+- **Lea la Documentación del Plugin:** Cada plugin puede tener requisitos o configuraciones específicas. Lea la documentación proporcionada por el desarrollador del plugin para comprender su funcionamiento y configurarlo correctamente. \[7]
+- **Mantenga los Plugins Actualizados:** Los desarrolladores de plugins lanzan actualizaciones para corregir errores, mejorar el rendimiento y abordar vulnerabilidades de seguridad. Mantenga sus plugins actualizados para asegurar la estabilidad y seguridad de su plataforma. \[8]
+- **Desinstale Plugins No Utilizados:** Los plugins no utilizados pueden representar un riesgo de seguridad o afectar el rendimiento de su sitio. Desinstale cualquier plugin que ya no necesite. \[9]
+- **Monitoree el Rendimiento:** Después de instalar nuevos plugins, monitoree el rendimiento de su sitio Moodle para detectar cualquier degradación. Algunos plugins pueden ser intensivos en recursos y afectar la velocidad de carga. \[10]
+- **Revise los Registros de Errores:** Consulte regularmente los registros de errores de Moodle y del servidor web para identificar cualquier problema relacionado con los plugins. \[11]
+- **Considere la Seguridad:** Algunos plugins pueden introducir vulnerabilidades. Asegúrese de que los plugins que instale sigan las mejores prácticas de seguridad de Moodle. \[12]
 
 ## Conclusión
 
@@ -131,17 +129,15 @@ La gestión de plugins en Moodle es una tarea esencial para cualquier administra
 
 ## Referencias
 
-[1] MoodleDocs. (n.d.). _Installing plugins_. Recuperado de [https://docs.moodle.org/en/Installing_plugins](https://docs.moodle.org/en/Installing_plugins)
-[2] MoodleDocs. (n.d.). _Uninstalling a plugin_. Recuperado de [https://docs.moodle.org/en/Installing_plugins#Uninstalling_a_plugin](https://docs.moodle.org/en/Installing_plugins#Uninstalling_a_plugin)
-[3] MoodleDocs. (n.d.). _Upgrading_. Recuperado de [https://docs.moodle.org/en/Upgrading](https://docs.moodle.org/en/Upgrading)
-[4] eLearning.folio3.com. (2023, Julio 7). _Moodle Plugins: Enhancing Functionality and Customization_. Recuperado de [https://elearning.folio3.com/blog/moodle-plugins/](https://elearning.folio3.com/blog/moodle-plugins/)
-[5] Moodle.org. (n.d.). _Moodle Plugins directory_. Recuperado de [https://moodle.org/plugins/](https://moodle.org/plugins/)
-[6] Mindfield Consulting. (2024, Septiembre 18). _Moodle Plugin Cleanup Strategies_. Recuperado de [https://mindfieldconsulting.com/moodle-plug-in-cleanup-strategies/](https://mindfieldconsulting.com/moodle-plug-in-cleanup-strategies/)
-[7] Edwiser. (n.d.). _Documentation_. Recuperado de [https://edwiser.org/documentation/](https://edwiser.org/documentation/)
-[8] MoodleDocs. (n.d.). _Security recommendations_. Recuperado de [https://docs.moodle.org/en/Security_recommendations](https://docs.moodle.org/en/Security_recommendations)
-[9] Moodle.org. (n.d.). _Moodle Plugins directory_. Recuperado de [https://moodle.org/plugins/](https://moodle.org/plugins/)
-[10] MoodleDocs. (n.d.). _Performance recommendations_. Recuperado de [https://docs.moodle.org/en/Performance_recommendations](https://docs.moodle.org/en/Performance_recommendations)
-[11] MoodleDocs. (n.d.). _Debugging_. Recuperado de [https://docs.moodle.org/en/Debugging](https://docs.moodle.org/en/Debugging)
-[12] GitHub. (n.d.). _emeneo/Moodle-plugin-security-checklist_. Recuperado de [https://github.com/emeneo/Moodle-plugin-security-checklist](https://github.com/emeneo/Moodle-plugin-security-checklist)
-
-
+\[1] MoodleDocs. (n.d.). _Installing plugins_. Recuperado de <https://docs.moodle.org/en/Installing_plugins>
+\[2] MoodleDocs. (n.d.). _Uninstalling a plugin_. Recuperado de <https://docs.moodle.org/en/Installing_plugins#Uninstalling_a_plugin>
+\[3] MoodleDocs. (n.d.). _Upgrading_. Recuperado de <https://docs.moodle.org/en/Upgrading>
+\[4] eLearning.folio3.com. (2023, Julio 7). _Moodle Plugins: Enhancing Functionality and Customization_. Recuperado de <https://elearning.folio3.com/blog/moodle-plugins/>
+\[5] Moodle.org. (n.d.). _Moodle Plugins directory_. Recuperado de <https://moodle.org/plugins/>
+\[6] Mindfield Consulting. (2024, Septiembre 18). _Moodle Plugin Cleanup Strategies_. Recuperado de <https://mindfieldconsulting.com/moodle-plug-in-cleanup-strategies/>
+\[7] Edwiser. (n.d.). _Documentation_. Recuperado de <https://edwiser.org/documentation/>
+\[8] MoodleDocs. (n.d.). _Security recommendations_. Recuperado de <https://docs.moodle.org/en/Security_recommendations>
+\[9] Moodle.org. (n.d.). _Moodle Plugins directory_. Recuperado de <https://moodle.org/plugins/>
+\[10] MoodleDocs. (n.d.). _Performance recommendations_. Recuperado de <https://docs.moodle.org/en/Performance_recommendations>
+\[11] MoodleDocs. (n.d.). _Debugging_. Recuperado de <https://docs.moodle.org/en/Debugging>
+\[12] GitHub. (n.d.). _emeneo/Moodle-plugin-security-checklist_. Recuperado de <https://github.com/emeneo/Moodle-plugin-security-checklist>

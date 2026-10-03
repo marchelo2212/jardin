@@ -1,6 +1,7 @@
 ---
 publish: true
-aliases: Reconocimiento CEC-EPN
+aliases:
+  - Reconocimiento CEC-EPN
 title: Reconocimiento CEC-EPN
 created: 2025-12-04T22:00
 modified: 2025-12-04T22:08:48-05:00
@@ -9,12 +10,11 @@ tags:
   - Reconocimiento
   - Work
   - Teaching
-cssclasses: ""
 ---
 
 ## **Un reconocimiento que fortalece el compromiso y el sentido de comunidad**
 
-Hace ya varios años que tengo el privilegio de colaborar con el **Centro de Educación Continua de la Escuela Politécnica Nacional (CEC-EPN)**. Quienes han seguido mi trayectoria profesional conocen la cercanía y el cariño que mantengo con esta institución: ha sido un espacio donde he tenido la oportunidad de **formar a niños, niñas, adolescentes, adultos y colegas**, pero también un lugar donde he aprendido profundamente de cada grupo, de cada historia y de cada proceso compartido.  
+Hace ya varios años que tengo el privilegio de colaborar con el **Centro de Educación Continua de la Escuela Politécnica Nacional (CEC-EPN)**. Quienes han seguido mi trayectoria profesional conocen la cercanía y el cariño que mantengo con esta institución: ha sido un espacio donde he tenido la oportunidad de **formar a niños, niñas, adolescentes, adultos y colegas**, pero también un lugar donde he aprendido profundamente de cada grupo, de cada historia y de cada proceso compartido.
 
 El CEC-EPN es más que un centro de formación; es una **comunidad viva**, comprometida con el aprendizaje permanente, la innovación educativa y el desarrollo humano. Año tras año, quienes formamos parte de su cuerpo docente recibimos no solo nuevos desafíos, sino también una motivación constante para seguir preparándonos, evolucionar y aportar desde nuestras distintas áreas de conocimiento.
 
@@ -29,4 +29,3 @@ Mi gratitud al CEC-EPN, a sus directivos, a mis colegas y a cada estudiante que 
 Seguimos construyendo, aprendiendo y transformando.
 
 Marcelo Sotaminga
-

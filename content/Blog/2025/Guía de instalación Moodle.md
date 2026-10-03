@@ -6,7 +6,6 @@ tags:
   - Moodle
   - Guía
   - instalación
-cssclasses: ""
 ---
 
 # Guía de Instalación Técnica de Moodle 4.5.4+ en Ubuntu 22.04.4 LTS
@@ -53,23 +52,21 @@ sudo apt install php8.1 libapache2-mod-php8.1 php8.1-mysql php8.1-xml php8.1-int
 
 Este comando instala el intérprete de PHP 8.1, el módulo de PHP para Apache (`libapache2-mod-php8.1`), y varias extensiones cruciales para Moodle:
 
-*   `php8.1-mysql`: Para la conexión con la base de datos MySQL.
-*   `php8.1-xml`: Para el procesamiento de datos XML.
-*   `php8.1-intl`: Para la internacionalización y localización.
-*   `php8.1-zip`: Para la compresión y descompresión de archivos ZIP.
-*   `php8.1-curl`: Para realizar solicitudes HTTP.
-*   `php8.1-gd`: Para el procesamiento de imágenes.
-*   `php8.1-mbstring`: Para el manejo de cadenas de caracteres multibyte.
-*   `php8.1-soap`: Para la comunicación con servicios web SOAP.
-*   `php8.1-opcache`: Para mejorar el rendimiento de PHP mediante el almacenamiento en caché del código compilado.
+- `php8.1-mysql`: Para la conexión con la base de datos MySQL.
+- `php8.1-xml`: Para el procesamiento de datos XML.
+- `php8.1-intl`: Para la internacionalización y localización.
+- `php8.1-zip`: Para la compresión y descompresión de archivos ZIP.
+- `php8.1-curl`: Para realizar solicitudes HTTP.
+- `php8.1-gd`: Para el procesamiento de imágenes.
+- `php8.1-mbstring`: Para el manejo de cadenas de caracteres multibyte.
+- `php8.1-soap`: Para la comunicación con servicios web SOAP.
+- `php8.1-opcache`: Para mejorar el rendimiento de PHP mediante el almacenamiento en caché del código compilado.
 
 Después de la instalación de PHP y sus extensiones, el módulo de PHP para Apache se habilitará automáticamente y Apache se reiniciará para aplicar los cambios.
 
 ## 2. Configuración de Apache y PHP
 
 Una vez instalados Apache y PHP, es necesario configurarlos adecuadamente para optimizar el rendimiento de Moodle y asegurar que el servidor web apunte correctamente a la instalación de Moodle.
-
-
 
 ### 2.1 Ajustes de Configuración de PHP
 
@@ -83,45 +80,45 @@ sudo nano /etc/php/8.1/apache2/php.ini
 
 Dentro de este archivo, busca y modifica las siguientes directivas para que coincidan con los valores recomendados por Moodle. Si no encuentras alguna directiva, puedes añadirla al final del archivo.
 
-*   `max_execution_time`: Define el tiempo máximo en segundos que un script puede ejecutarse. Moodle puede requerir más tiempo para ciertas operaciones, como la instalación o la actualización.
-    ```ini
-    max_execution_time = 300
-    ```
+- `max_execution_time`: Define el tiempo máximo en segundos que un script puede ejecutarse. Moodle puede requerir más tiempo para ciertas operaciones, como la instalación o la actualización.
+  ```ini
+  max_execution_time = 300
+  ```
 
-*   `memory_limit`: Establece la cantidad máxima de memoria en bytes que un script puede consumir. Moodle, especialmente con muchos usuarios o plugins, puede necesitar más memoria.
-    ```ini
-    memory_limit = 512M
-    ```
+- `memory_limit`: Establece la cantidad máxima de memoria en bytes que un script puede consumir. Moodle, especialmente con muchos usuarios o plugins, puede necesitar más memoria.
+  ```ini
+  memory_limit = 512M
+  ```
 
-*   `post_max_size`: Define el tamaño máximo de datos que se pueden enviar a través de un método POST. Esto es importante para la subida de archivos grandes.
-    ```ini
-    post_max_size = 128M
-    ```
+- `post_max_size`: Define el tamaño máximo de datos que se pueden enviar a través de un método POST. Esto es importante para la subida de archivos grandes.
+  ```ini
+  post_max_size = 128M
+  ```
 
-*   `upload_max_filesize`: Establece el tamaño máximo permitido para los archivos subidos. Es crucial para la subida de recursos y actividades en Moodle.
-    ```ini
-    upload_max_filesize = 128M
-    ```
+- `upload_max_filesize`: Establece el tamaño máximo permitido para los archivos subidos. Es crucial para la subida de recursos y actividades en Moodle.
+  ```ini
+  upload_max_filesize = 128M
+  ```
 
-*   `max_input_vars`: Limita el número de variables de entrada que pueden aceptarse. Moodle puede generar un gran número de variables en formularios complejos.
-    ```ini
-    max_input_vars = 5000
-    ```
+- `max_input_vars`: Limita el número de variables de entrada que pueden aceptarse. Moodle puede generar un gran número de variables en formularios complejos.
+  ```ini
+  max_input_vars = 5000
+  ```
 
-*   `opcache.enable`: Habilita el módulo OPcache, que mejora el rendimiento de PHP almacenando en caché el código precompilado.
-    ```ini
-    opcache.enable = 1
-    ```
+- `opcache.enable`: Habilita el módulo OPcache, que mejora el rendimiento de PHP almacenando en caché el código precompilado.
+  ```ini
+  opcache.enable = 1
+  ```
 
-*   `opcache.memory_consumption`: Asigna la cantidad de memoria para OPcache.
-    ```ini
-    opcache.memory_consumption = 128
-    ```
+- `opcache.memory_consumption`: Asigna la cantidad de memoria para OPcache.
+  ```ini
+  opcache.memory_consumption = 128
+  ```
 
-*   `opcache.max_accelerated_files`: Define el número máximo de scripts que pueden ser almacenados en caché por OPcache.
-    ```ini
-    opcache.max_accelerated_files = 8000
-    ```
+- `opcache.max_accelerated_files`: Define el número máximo de scripts que pueden ser almacenados en caché por OPcache.
+  ```ini
+  opcache.max_accelerated_files = 8000
+  ```
 
 Después de realizar los cambios, guarda el archivo (Ctrl+O, Enter) y sal del editor (Ctrl+X).
 
@@ -162,15 +159,15 @@ Dentro de este archivo, añade la siguiente configuración. Asegúrate de reempl
 
 **Explicación de las directivas:**
 
-*   `<VirtualHost *:80>`: Indica que este bloque de configuración se aplica a todas las solicitudes en el puerto 80 (HTTP).
-*   `ServerAdmin webmaster@localhost`: Dirección de correo electrónico del administrador del servidor.
-*   `DocumentRoot /var/www/html/moodle`: Especifica el directorio raíz donde se encuentran los archivos de Moodle. Aquí es donde colocaremos los archivos de Moodle más adelante.
-*   `ServerName your_domain_or_ip`: El nombre de dominio o la dirección IP de tu servidor. Los usuarios accederán a Moodle a través de esta dirección.
-*   `<Directory /var/www/html/moodle/>`: Define las configuraciones específicas para el directorio de Moodle.
-    *   `Options Indexes FollowSymLinks`: Permite la visualización de directorios y el seguimiento de enlaces simbólicos.
-    *   `AllowOverride All`: Permite el uso de archivos `.htaccess` para sobrescribir configuraciones de Apache a nivel de directorio. Moodle utiliza esto para sus reglas de reescritura de URL.
-    *   `Require all granted`: Permite el acceso a todos los usuarios.
-*   `ErrorLog` y `CustomLog`: Definen las ubicaciones de los archivos de registro de errores y acceso de Apache.
+- `<VirtualHost *:80>`: Indica que este bloque de configuración se aplica a todas las solicitudes en el puerto 80 (HTTP).
+- `ServerAdmin webmaster@localhost`: Dirección de correo electrónico del administrador del servidor.
+- `DocumentRoot /var/www/html/moodle`: Especifica el directorio raíz donde se encuentran los archivos de Moodle. Aquí es donde colocaremos los archivos de Moodle más adelante.
+- `ServerName your_domain_or_ip`: El nombre de dominio o la dirección IP de tu servidor. Los usuarios accederán a Moodle a través de esta dirección.
+- `<Directory /var/www/html/moodle/>`: Define las configuraciones específicas para el directorio de Moodle.
+  - `Options Indexes FollowSymLinks`: Permite la visualización de directorios y el seguimiento de enlaces simbólicos.
+  - `AllowOverride All`: Permite el uso de archivos `.htaccess` para sobrescribir configuraciones de Apache a nivel de directorio. Moodle utiliza esto para sus reglas de reescritura de URL.
+  - `Require all granted`: Permite el acceso a todos los usuarios.
+- `ErrorLog` y `CustomLog`: Definen las ubicaciones de los archivos de registro de errores y acceso de Apache.
 
 Guarda el archivo (Ctrl+O, Enter) y sal del editor (Ctrl+X).
 
@@ -188,8 +185,6 @@ sudo systemctl restart apache2
 ```
 
 Con esto, Apache está configurado para servir Moodle. En el siguiente paso, configuraremos la base de datos MySQL.
-
-
 
 ## 3. Instalación y Configuración de MySQL
 
@@ -221,11 +216,11 @@ sudo mysql_secure_installation
 
 Durante la ejecución de este script, se te harán las siguientes preguntas. Las respuestas recomendadas para un entorno de producción son:
 
-1.  **VALIDATE PASSWORD COMPONENT? (Press y|Y for Yes, any other key for No):** `n` (A menos que desees forzar políticas de contraseña fuertes, lo cual puede ser útil en entornos de producción, pero para esta guía lo omitiremos para simplificar).
-2.  **Remove anonymous users? (Press y|Y for Yes, any other key for No) :** `y` (Elimina usuarios anónimos que podrían acceder a tu base de datos sin credenciales).
-3.  **Disallow root login remotely? (Press y|Y for Yes, any other key for No) :** `y` (Deshabilita el inicio de sesión remoto para el usuario `root`, lo que aumenta la seguridad).
-4.  **Remove test database and access to it? (Press y|Y for Yes, any other key for No) :** `y` (Elimina la base de datos de prueba predeterminada y sus privilegios).
-5.  **Reload privilege tables now? (Press y|Y for Yes, any other key for No) :** `y` (Aplica los cambios de privilegios inmediatamente).
+1. **VALIDATE PASSWORD COMPONENT? (Press y|Y for Yes, any other key for No):** `n` (A menos que desees forzar políticas de contraseña fuertes, lo cual puede ser útil en entornos de producción, pero para esta guía lo omitiremos para simplificar).
+2. **Remove anonymous users? (Press y|Y for Yes, any other key for No) :** `y` (Elimina usuarios anónimos que podrían acceder a tu base de datos sin credenciales).
+3. **Disallow root login remotely? (Press y|Y for Yes, any other key for No) :** `y` (Deshabilita el inicio de sesión remoto para el usuario `root`, lo que aumenta la seguridad).
+4. **Remove test database and access to it? (Press y|Y for Yes, any other key for No) :** `y` (Elimina la base de datos de prueba predeterminada y sus privilegios).
+5. **Reload privilege tables now? (Press y|Y for Yes, any other key for No) :** `y` (Aplica los cambios de privilegios inmediatamente).
 
 ### 3.3 Crear la Base de Datos y el Usuario para Moodle
 
@@ -251,15 +246,13 @@ EXIT;
 
 **Explicación de los comandos SQL:**
 
-*   `CREATE DATABASE moodle ...`: Crea una nueva base de datos llamada `moodle` con la codificación de caracteres `utf8mb4` y la intercalación `utf8mb4_unicode_ci`, que son recomendadas para Moodle para soportar una amplia gama de caracteres.
-*   `CREATE USER 'moodle_user'@'localhost' ...`: Crea un nuevo usuario de MySQL llamado `moodle_user` que solo puede conectarse desde `localhost` (el mismo servidor donde está MySQL) y le asigna una contraseña.
-*   `GRANT SELECT,INSERT,... ON moodle.* TO 'moodle_user'@'localhost';`: Otorga los permisos necesarios al `moodle_user` sobre todas las tablas de la base de datos `moodle`.
-*   `FLUSH PRIVILEGES;`: Recarga los privilegios para que los cambios surtan efecto inmediatamente.
-*   `EXIT;`: Sale de la consola de MySQL.
+- `CREATE DATABASE moodle ...`: Crea una nueva base de datos llamada `moodle` con la codificación de caracteres `utf8mb4` y la intercalación `utf8mb4_unicode_ci`, que son recomendadas para Moodle para soportar una amplia gama de caracteres.
+- `CREATE USER 'moodle_user'@'localhost' ...`: Crea un nuevo usuario de MySQL llamado `moodle_user` que solo puede conectarse desde `localhost` (el mismo servidor donde está MySQL) y le asigna una contraseña.
+- `GRANT SELECT,INSERT,... ON moodle.* TO 'moodle_user'@'localhost';`: Otorga los permisos necesarios al `moodle_user` sobre todas las tablas de la base de datos `moodle`.
+- `FLUSH PRIVILEGES;`: Recarga los privilegios para que los cambios surtan efecto inmediatamente.
+- `EXIT;`: Sale de la consola de MySQL.
 
 Con la base de datos y el usuario creados, estamos listos para descargar e instalar Moodle.
-
-
 
 ## 4. Descarga e Instalación de Moodle
 
@@ -299,8 +292,6 @@ Deberías ver una lista de directorios y archivos que componen la instalación d
 
 Ahora que los archivos de Moodle están en su lugar, necesitamos crear el directorio de datos de Moodle y establecer los permisos adecuados para que Moodle pueda escribir en él y en su propio directorio de instalación.
 
-
-
 ### 5.1 Creación del Directorio de Datos de Moodle y Permisos
 
 Moodle necesita un directorio para almacenar los datos de los usuarios, archivos subidos, sesiones, etc. Este directorio debe estar fuera del directorio accesible por el servidor web por razones de seguridad. Crearemos este directorio y le asignaremos los permisos adecuados.
@@ -320,10 +311,10 @@ sudo chmod -R 777 /var/www/moodledata
 
 **Explicación de los permisos:**
 
-*   `chown -R www-data:www-data /var/www/html/moodle`: Cambia el propietario y el grupo del directorio de Moodle y su contenido a `www-data`.
-*   `chmod -R 755 /var/www/html/moodle`: Establece permisos de lectura y ejecución para todos, y escritura para el propietario en el directorio de Moodle. Esto es seguro para los archivos de la aplicación.
-*   `chown -R www-data:www-data /var/www/moodledata`: Cambia el propietario y el grupo del directorio de datos de Moodle a `www-data`.
-*   `chmod -R 777 /var/www/moodledata`: Otorga permisos completos (lectura, escritura, ejecución) al propietario, grupo y otros en el directorio `moodledata`. Esto es necesario para que Moodle pueda crear y gestionar archivos en este directorio. **Nota:** Aunque `777` es funcional, en un entorno de producción se recomienda una configuración más restrictiva como `770` o `775` si es posible, asegurándose de que el usuario `www-data` tenga los permisos de escritura necesarios.
+- `chown -R www-data:www-data /var/www/html/moodle`: Cambia el propietario y el grupo del directorio de Moodle y su contenido a `www-data`.
+- `chmod -R 755 /var/www/html/moodle`: Establece permisos de lectura y ejecución para todos, y escritura para el propietario en el directorio de Moodle. Esto es seguro para los archivos de la aplicación.
+- `chown -R www-data:www-data /var/www/moodledata`: Cambia el propietario y el grupo del directorio de datos de Moodle a `www-data`.
+- `chmod -R 777 /var/www/moodledata`: Otorga permisos completos (lectura, escritura, ejecución) al propietario, grupo y otros en el directorio `moodledata`. Esto es necesario para que Moodle pueda crear y gestionar archivos en este directorio. **Nota:** Aunque `777` es funcional, en un entorno de producción se recomienda una configuración más restrictiva como `770` o `775` si es posible, asegurándose de que el usuario `www-data` tenga los permisos de escritura necesarios.
 
 ### 5.2 Creación del Archivo `config.php`
 
@@ -371,10 +362,10 @@ require_once(__DIR__ . '/lib/setup.php');
 
 **Asegúrate de cambiar:**
 
-*   `$CFG->dbuser`: El usuario de la base de datos que creaste (ej. `moodle_user`).
-*   `$CFG->dbpass`: La contraseña de ese usuario (ej. `your_password`).
-*   `$CFG->wwwroot`: La URL de tu sitio Moodle (ej. `http://your_domain_or_ip`). Si estás usando una dirección IP, asegúrate de que sea la correcta.
-*   `$CFG->dataroot`: La ruta absoluta al directorio de datos de Moodle que creaste (`/var/www/moodledata`).
+- `$CFG->dbuser`: El usuario de la base de datos que creaste (ej. `moodle_user`).
+- `$CFG->dbpass`: La contraseña de ese usuario (ej. `your_password`).
+- `$CFG->wwwroot`: La URL de tu sitio Moodle (ej. `http://your_domain_or_ip`). Si estás usando una dirección IP, asegúrate de que sea la correcta.
+- `$CFG->dataroot`: La ruta absoluta al directorio de datos de Moodle que creaste (`/var/www/moodledata`).
 
 Guarda el archivo (Ctrl+O, Enter) y sal del editor (Ctrl+X).
 
@@ -384,18 +375,17 @@ Con `config.php` configurado, ahora puedes acceder a Moodle a través de tu nave
 
 Serás redirigido a la página de instalación de Moodle. Sigue los pasos en pantalla:
 
-1.  **Idioma:** Selecciona tu idioma preferido y haz clic en `Siguiente`.
-2.  **Rutas:** Confirma las rutas de Moodle y del directorio de datos. Deberían ser correctas si seguiste los pasos anteriores. Haz clic en `Siguiente`.
-3.  **Base de Datos:** Verifica la configuración de la base de datos. Moodle intentará conectarse con la información proporcionada en `config.php`. Si todo es correcto, haz clic en `Siguiente`.
-4.  **Licencia:** Lee y acepta la licencia GPL de Moodle. Haz clic en `Continuar`.
-5.  **Comprobación de Servidor:** Moodle realizará una serie de comprobaciones para asegurarse de que tu servidor cumple con todos los requisitos. Si hay advertencias o errores, deberás solucionarlos antes de continuar. Presta especial atención a las extensiones de PHP faltantes o a los ajustes de `php.ini` que no cumplan con los requisitos. Una vez que todo esté en verde, haz clic en `Continuar`.
-6.  **Instalación:** Moodle comenzará a instalar las tablas de la base de datos y a configurar los componentes. Este proceso puede tardar varios minutos. Una vez completado, haz clic en `Continuar`.
-7.  **Cuenta de Administrador:** Crea la cuenta de administrador principal para tu sitio Moodle. Asegúrate de usar una contraseña segura y de recordarla. Haz clic en `Actualizar perfil`.
-8.  **Configuración de la Página Principal:** Configura el nombre completo y corto de tu sitio Moodle, así como la zona horaria. Haz clic en `Guardar cambios`.
+1. **Idioma:** Selecciona tu idioma preferido y haz clic en `Siguiente`.
+2. **Rutas:** Confirma las rutas de Moodle y del directorio de datos. Deberían ser correctas si seguiste los pasos anteriores. Haz clic en `Siguiente`.
+3. **Base de Datos:** Verifica la configuración de la base de datos. Moodle intentará conectarse con la información proporcionada en `config.php`. Si todo es correcto, haz clic en `Siguiente`.
+4. **Licencia:** Lee y acepta la licencia GPL de Moodle. Haz clic en `Continuar`.
+5. **Comprobación de Servidor:** Moodle realizará una serie de comprobaciones para asegurarse de que tu servidor cumple con todos los requisitos. Si hay advertencias o errores, deberás solucionarlos antes de continuar. Presta especial atención a las extensiones de PHP faltantes o a los ajustes de `php.ini` que no cumplan con los requisitos. Una vez que todo esté en verde, haz clic en `Continuar`.
+6. **Instalación:** Moodle comenzará a instalar las tablas de la base de datos y a configurar los componentes. Este proceso puede tardar varios minutos. Una vez completado, haz clic en `Continuar`.
+7. **Cuenta de Administrador:** Crea la cuenta de administrador principal para tu sitio Moodle. Asegúrate de usar una contraseña segura y de recordarla. Haz clic en `Actualizar perfil`.
+8. **Configuración de la Página Principal:** Configura el nombre completo y corto de tu sitio Moodle, así como la zona horaria. Haz clic en `Guardar cambios`.
 
 ¡Felicidades! Moodle debería estar ahora completamente instalado y listo para usar. Serás redirigido a la página principal de tu nuevo sitio Moodle.
 
 ## 6. Documentación Final y Entrega de la Guía
 
 En esta fase, se consolidará toda la información y se presentará la guía completa al usuario.
-

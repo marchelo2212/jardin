@@ -1,10 +1,8 @@
 ---
 publish: true
 created: 2025-07-27T22:30
-modified: 2026-03-14T14:29
-cssclasses: ""
+modified: 2026-03-14T14:30
 ---
-
 
 📄 [[19-11-CEC-Formador.pdf|19-11-CEC-Formador.pdf]]
 📄 [[20-01-Senescyt.pdf|20-01-Senescyt.pdf]]
@@ -22,16 +20,16 @@ cssclasses: ""
 📄 [[21-06-Bienestar-Social-Estud.pdf|21-06-Bienestar-Social-Estud.pdf]]
 📄 [[21-06-Datos Abierrtos.pdf|21-06-Datos Abierrtos.pdf]]
 📄 [[21-06-Funda-segur-ocupacio.pdf|21-06-Funda-segur-ocupacio.pdf]]
-📄 [[Sobre mi/Certifications_Documents/21-06-Introducción a los Datos Abiertos en el Ecuador\|Introducción a los Datos Abiertos en el Ecuador]]
+📄 [[21-06-Introducción a los Datos Abiertos en el Ecuador|Introducción a los Datos Abiertos en el Ecuador]]
 📄 [[21-07-Escuela PC.pdf|21-07-Escuela PC.pdf]]
 📄 [[21-07-FactorRiesgoBio.pdf|21-07-FactorRiesgoBio.pdf]]
 📄 [[21-08-IdeasDe10.pdf|21-08-IdeasDe10.pdf]]
-📄 [[Sobre mi/Certifications_Documents/21-08-Riesgo ergonómico\|Riesgo ergonómico]]
+📄 [[21-08-Riesgo ergonómico|Riesgo ergonómico]]
 📄 [[21-08-RIesgosErgonomicos.pdf|21-08-RIesgosErgonomicos.pdf]]
-📄 [[Sobre mi/Certifications_Documents/21-11-Contratación Pública\|Contratación Pública]]
+📄 [[21-11-Contratación Pública|Contratación Pública]]
 📄 [[21-11-ContratacionPublica_compressed.pdf|21-11-ContratacionPublica_compressed.pdf]]
-📄 [[Sobre mi/Certifications_Documents/21-11-El rol de la comunicación en la gestión política\|El rol de la comunicación en la gestión política]]
-📄 [[Sobre mi/Certifications_Documents/21-11-Gestión de proyectos públicos\|Gestión de proyectos públicos]]
+📄 [[21-11-El rol de la comunicación en la gestión política|El rol de la comunicación en la gestión política]]
+📄 [[21-11-Gestión de proyectos públicos|Gestión de proyectos públicos]]
 📄 [[21-11-GestionarEquipoDeTrabajo_compressed.pdf|21-11-GestionarEquipoDeTrabajo_compressed.pdf]]
 📄 [[21-11-GestionProyectosPublicos_compressed.pdf|21-11-GestionProyectosPublicos_compressed.pdf]]
 📄 [[21-11-Herramientas Ediciente Grencia Publica_compressed.pdf|21-11-Herramientas Ediciente Grencia Publica_compressed.pdf]]
@@ -39,18 +37,19 @@ cssclasses: ""
 📄 [[21-11-Pract-Vida-Saludable.pdf|21-11-Pract-Vida-Saludable.pdf]]
 📄 [[21-11-RolComunicacion_compressed.pdf|21-11-RolComunicacion_compressed.pdf]]
 📄 [[21-12-Gamificacion-Nebrija.pdf|21-12-Gamificacion-Nebrija.pdf]]
-📄 [[Sobre mi/Certifications_Documents/21-12-Juegos Gamificación y TIC\|Juegos Gamificación y TIC]]
+📄 [[21-12-Juegos Gamificación y TIC|Juegos Gamificación y TIC]]
 📄 [[21-12-RGPD-UOC.pdf|21-12-RGPD-UOC.pdf]]
 📄 [[22-02-Certificado_Fundamentos-SERCOP.pdf|22-02-Certificado_Fundamentos-SERCOP.pdf]]
-📄 [[Sobre mi/Certifications_Documents/22-03-Escuela de Pensamiento Computacional\|Escuela de Pensamiento Computacional]]
-📄 [[Sobre mi/Certifications_Documents/22-03-FORMACIÓN DOCENTE TECNO-PEDAGÓGICA PARA EDUCACIÓN EN LÍNEA\|FORMACIÓN DOCENTE TECNO-PEDAGÓGICA PARA EDUCACIÓN EN LÍNEA]]
+📄 [[22-03-Escuela de Pensamiento Computacional|Escuela de Pensamiento Computacional]]
+📄 [[22-03-FORMACIÓN DOCENTE TECNO-PEDAGÓGICA PARA EDUCACIÓN EN LÍNEA|FORMACIÓN DOCENTE TECNO-PEDAGÓGICA PARA EDUCACIÓN EN LÍNEA]]
 📄 [[22-03-Tecnopedagogico UNAE.pdf|22-03-Tecnopedagogico UNAE.pdf]]
 📄 [[22-05-Concientizacion_Ciberseguridad.pdf|22-05-Concientizacion_Ciberseguridad.pdf]]
 📄 [[22-07-INCIBE CIBERSEGURIDAD.pdf|22-07-INCIBE CIBERSEGURIDAD.pdf]]
-📄 [[Sobre mi/Certifications_Documents/22-11-Mobile learning claves para la aplicacin de los dispositivos mviles en el aula.\|Mobile learning claves para la aplicacin de los dispositivos mviles en el aula.]]
+📄 [[22-11-Mobile learning claves para la aplicacin de los dispositivos mviles en el aula.|Mobile learning claves para la aplicacin de los dispositivos mviles en el aula.]]
 📄 [[22-11-MOOC Mobile Learning.pdf|22-11-MOOC Mobile Learning.pdf]]
-📄 [[Sobre mi/Certifications_Documents/24-08-Capacitación en Investigación Científica 2024\|Capacitación en Investigación Científica 2024]]
+📄 [[24-08-Capacitación en Investigación Científica 2024|Capacitación en Investigación Científica 2024]]
 📄 [[24-08-SCIMAGo.pdf|24-08-SCIMAGo.pdf]]
 📄 [[25-06-Diplomado Ciencia de Datos.pdf|25-06-Diplomado Ciencia de Datos.pdf]]
-📄 [[Sobre mi/Certifications_Documents/25-06-Diplomado Ciencia de Datos\|Diplomado en Inteligencia Artificial con Deep Learning]]
-
+📄 [[25-06-Diplomado Ciencia de Datos|Diplomado en Inteligencia Artificial con Deep Learning]]
+📄 [[26-08-IA para automatizar tareas académicas y administrativas.pdf|26-08-IA para automatizar tareas académicas y administrativas.pdf]]
+📄 [[26-08-IA para automatizar tareas académicas y administrativas|IA para automatizar tareas académicas y administrativas]]

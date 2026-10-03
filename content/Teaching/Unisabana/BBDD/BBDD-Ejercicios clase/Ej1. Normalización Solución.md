@@ -2,7 +2,6 @@
 publish: true
 created: 2026-02-18T07:44
 modified: 2026-02-21T16:11
-cssclasses: ""
 ---
 
 # Guía de Estudio: Normalización y Diseño de Bases de Datos Relacionales
@@ -13,14 +12,13 @@ Esta guía de estudio presenta un caso práctico de diseño de bases de datos ba
 
 En un entorno de biblioteca, se desea registrar la información de los usuarios, los libros que retiran y los departamentos a los que pertenecen. Inicialmente, el sistema utiliza una **tabla plana (sin normalizar)** que combina toda la información en una sola estructura, similar a lo que resultaría de una operación de _natural join_ entre múltiples relaciones.
 
-### Tabla Plana: Registro_Biblioteca (Sin Normalizar)
+### Tabla Plana: Registro\_Biblioteca (Sin Normalizar)
 
 Esta tabla presenta redundancias significativas. Por ejemplo, los datos del usuario y del departamento se repiten cada vez que se retira un libro diferente.
 
-
 ### Tabla de préstamos de libros de la biblioteca
 
-| ID_Usuario | Nombre_Usuario | Nombre_Depto | Edificio_Depto | ID_Libro | Título_Libro     | Fecha_Retiro |
+| ID\_Usuario | Nombre\_Usuario | Nombre\_Depto | Edificio\_Depto | ID\_Libro | Título\_Libro     | Fecha\_Retiro |
 | ---------- | -------------- | ------------ | -------------- | -------- | ---------------- | ------------ |
 | 00128      | Zhang          | Comp. Sci.   | Taylor         | CS-101   | Intro. a SQL     | 2017-10-01   |
 | 00128      | Zhang          | Comp. Sci.   | Taylor         | CS-347   | Bases de Datos   | 2017-10-15   |
@@ -50,9 +48,9 @@ En nuestra tabla original, los valores ya son atómicos. Sin embargo, para cumpl
 
 **Transformación:** Separamos los datos del usuario y los datos del libro en tablas independientes para eliminar estas dependencias parciales.
 
-- **Tabla Usuario:** (`ID_Usuario`, Nombre_Usuario, Nombre_Depto, Edificio_Depto)
-- **Tabla Libro:** (`ID_Libro`, Título_Libro)
-- **Tabla Retiro:** (`ID_Usuario`, `ID_Libro`, Fecha_Retiro) — _Aquí ID_Usuario e ID_Libro actúan como claves foráneas (foreign keys)._
+- **Tabla Usuario:** (`ID_Usuario`, Nombre\_Usuario, Nombre\_Depto, Edificio\_Depto)
+- **Tabla Libro:** (`ID_Libro`, Título\_Libro)
+- **Tabla Retiro:** (`ID_Usuario`, `ID_Libro`, Fecha\_Retiro) — _Aquí ID\_Usuario e ID\_Libro actúan como claves foráneas (foreign keys)._
 
 ### Paso 3: Tercera Forma Normal (3FN)
 
@@ -66,10 +64,10 @@ En nuestra tabla original, los valores ya son atómicos. Sin embargo, para cumpl
 
 **Transformación:** Creamos una relación separada para los departamentos, asegurando que cada hecho se registre solo una vez.
 
-- **Tabla Usuario:** (`ID_Usuario`, Nombre_Usuario, **Nombre_Depto**)
-- **Tabla Departamento:** (`Nombre_Depto`, Edificio_Depto)
-- **Tabla Libro:** (`ID_Libro`, Título_Libro)
-- **Tabla Retiro:** (`ID_Usuario`, `ID_Libro`, Fecha_Retiro)
+- **Tabla Usuario:** (`ID_Usuario`, Nombre\_Usuario, **Nombre\_Depto**)
+- **Tabla Departamento:** (`Nombre_Depto`, Edificio\_Depto)
+- **Tabla Libro:** (`ID_Libro`, Título\_Libro)
+- **Tabla Retiro:** (`ID_Usuario`, `ID_Libro`, Fecha\_Retiro)
 
 ### Paso 4: Forma Normal de Boyce-Codd (FNBC)
 
@@ -77,7 +75,7 @@ En nuestra tabla original, los valores ya son atómicos. Sin embargo, para cumpl
 
 En el diseño de la biblioteca, supongamos que cada departamento tiene múltiples edificios pero cada edificio pertenece a un solo departamento. Si tuviéramos una relación donde el edificio determina el departamento, y el edificio no fuera clave primaria, estaríamos violando la FNBC. Al separar `Departamento` y `Usuario`, y asegurar que `Nombre_Depto` es la clave en su propia tabla, eliminamos anomalías donde la información del edificio se perdería si se eliminara al último usuario de ese departamento.
 
---------------------------------------------------------------------------------
+---
 
 ## 3. Cuestionario de Evaluación (Quiz)
 
@@ -111,7 +109,7 @@ En el diseño de la biblioteca, supongamos que cada departamento tiene múltiple
 - B) Encontrar de manera eficiente las tuplas que tienen un valor específico para ese atributo sin escanear toda la relación.
 - C) Crear copias de seguridad automáticas.
 
---------------------------------------------------------------------------------
+---
 
 ## 4. Clave de Respuestas
 
@@ -121,7 +119,7 @@ En el diseño de la biblioteca, supongamos que cada departamento tiene múltiple
 4. **B.** La opción **cascade** permite que las eliminaciones se propaguen a través de la cadena de dependencias de claves foráneas.
 5. **B.** Los **índices** forman parte del esquema físico y mejoran el rendimiento de las consultas de selección.
 
---------------------------------------------------------------------------------
+---
 
 ## 5. Glosario de Términos Clave
 

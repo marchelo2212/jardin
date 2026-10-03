@@ -1,26 +1,26 @@
 ---
 publish: true
-created: 2026-03-11T09:27:27.472-05:00
-modified: 2026-03-14T13:42:57.068-05:00
+created: 2026-03-11T14:27:27.472Z
+modified: 2026-09-20T03:25:57.851Z
 tags:
-  - M
-  - O
-  - C
-  - s
-cssclasses: ""
+  - MOCs
 ---
 
+↩️  [[BBDD-Recursos]]
 
-- **BBDD-GuiasPracticas**
-	- [[Teaching/Unisabana/BBDD/BBDD-GuiasPracticas/Guía 01-Instalación LAMP con MariaDB 10\|Guía 01-Instalación LAMP con MariaDB 10  Autor]]
-	- [[Teaching/Unisabana/BBDD/BBDD-GuiasPracticas/Guía 02-De basico a Intermedio de MySQL\|Guía 2: SQL Intermedio (MariaDB 10)]]
-	- [[Teaching/Unisabana/BBDD/BBDD-GuiasPracticas/Guia 04 - Procedimientos almacenados, trigers y transacciones\|Guía 04 – Programación en SQL (Procedimientos, Disparadores, Funciones y Transacciones)**]]
-	- [[Teaching/Unisabana/BBDD/BBDD-GuiasPracticas/index]]
-	- [[Teaching/Unisabana/BBDD/BBDD-GuiasPracticas/Tip and tricks SQL\|Cursos a seguir sobre SQL]]
+- [[Guía 01-Instalación LAMP con MariaDB 10|Guía 01 - Instalación LAMP con MariaDB 10  Autor]]
+- [[Guía 02-Caso Heladería, DDL-DML y QUERIES|Guía 02 - Caso Heladería: DDL, DML y Consultas (QUERIES)]]
+- [[Guía 03-Caso Universidad, MySQL Intermedio|Guía 03 - SQL Intermedio (MariaDB 10)]]
+- [[Guía 03.5-Reto de Síntesis, Modelado y Consultas|Guía 03.5 - Reto de Síntesis: Del Papel al Motor Relacional]]
+- [[Guia 04-Conectividad con Bases de Datos|Guía 04 - Conectividad con Bases de Datos]]
+- [[Guia 04.5-Proyecto Integrador PHP (Caso Zapateria)|Guía 04.5 - Proyecto Integrador PHP (Caso Zapatería)]]
+- [[Guía 04.8-Ejercicio pre-parcial|Guía 04.8 - Ejercicio pre-parcial]]
+- [[Guía 04.8-Solución|Guía 04.8 - Solución]]
+- [[Guia 05-Parcial 2 Solucion|🛠️ Solución Técnica: PizzaMaster Solutions]]
+- [[Guia 05-Parcial 2]]
+- [[Guía 06-Vistas|Guía 06 - Vistas en MySQL]]
+- [[Guia 07-Procedimientos almacenados, triggers y transacciones|Guía 07 - Programación en SQL (Procedimientos, Disparadores, Funciones y Transacciones)]]
+- [[index]]
+- [[Tip and tricks SQL|Cursos, tips tricks SQL]]
 
-
-
-
-
-
-
+↩️  [[BBDD-Recursos]]
