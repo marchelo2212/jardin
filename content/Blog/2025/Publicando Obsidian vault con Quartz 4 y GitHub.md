@@ -182,178 +182,206 @@ Aunque descubrimos que **Brave y algunos bloqueadores** impiden que los iframes 
 Inicializamos el repo real:
 
 ```bash
-# 📤 6. Subiendo el sitio a GitHub
-
-Inicializamos el repo real (ahora llamado `jardin` para publicarse como subcarpeta nativa):
-
-```bash
 git init
-git remote add origin https://github.com/marchelo2212/jardin.git
+git remote add origin https://github.com/marchelo2212/mi-quartz.git
 git checkout -b v4
 git add .
 git commit -m "Inicializando Quartz"
 git push -u origin v4
 ```
 
-🚨 Importante:  
-GitHub ya no acepta contraseñas → usar **Tokens (PAT)** con permisos de repositorio.
+🚨 Importante:\
+GitHub ya no acepta contraseñas → usar **Tokens (PAT)**.
 
-# 🌐 7. Configurar GitHub Pages con Quartz (Subcarpeta /jardin/)
+# 🌐 7. Configurar GitHub Pages con Quartz
 
-En la arquitectura actual, la raíz (`https://marchelo2212.github.io`) está reservada para el **CV Interactivo y Observatorio de Investigación**, mientras que el **Jardín Digital** se publica de forma nativa e independiente en:
+Usé el dominio:
 
 ```
-https://marchelo2212.github.io/jardin/
+https://marchelo2212.github.io
 ```
 
-### Configuración en `quartz.config.ts`:
-Para que todos los enlaces internos, imágenes y scripts resuelvan correctamente en la subcarpeta:
-
-```ts
-configuration: {
-  pageTitle: "marchelo2212",
-  baseUrl: "marchelo2212.github.io/jardin",
-  // ...
-}
-```
-
-### Workflow de GitHub Actions (`.github/workflows/deploy.yml`):
-En los ajustes del repositorio en GitHub (`Settings -> Pages`), configuramos **Source: GitHub Actions**. El flujo oficial de Quartz 4 se encarga de compilar y desplegar en la nube automáticamente:
+Configuración final del workflow (`.github/workflows/deploy.yml`):
 
 ```yaml
-name: Deploy Quartz site to GitHub Pages
-
 on:
   push:
     branches:
       - v4
 
 permissions:
-  contents: read
+  contents: write
   pages: write
-  id-token: write
-
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
 
 jobs:
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-22.04
+  build:
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
-          fetch-depth: 0
-
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 22
-
-      - name: Install Dependencies
-        run: npm ci
-
-      - name: Build Quartz
-        run: npx quartz build
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+          node-version: 20
+      - run: npm install
+      - run: npx quartz build
+      - uses: actions/upload-pages-artifact@v3
         with:
           path: public
-
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+  deploy:
+    needs: build
+    permissions:
+      pages: write
+      id-token: write
+    uses: actions/deploy-pages@v4
 ```
 
-# 🤖 8. Script de sincronización local (deploy.sh)
+Cuando todo está bien, el sitio se despliega automáticamente cada vez que hago:
 
-Con GitHub Actions en la nube, ya no es necesario compilar localmente ni copiar archivos manualmente entre repositorios. Nuestro `deploy.sh` local ahora es un script seguro de sincronización:
+```bash
+git add .
+git commit -m "update"
+git push
+```
+
+# 🤖 8. Automatizando con un script deploy.sh
+
+Creamos un script que:
+
+- cambia a la rama correcta
+- hace pull
+- hace build
+- hace commit si hay cambios
+- sube a GitHub
 
 ```bash
 #!/usr/bin/env bash
+
 set -e
 
-QUARTZ_REPO="/Users/marcelosotaminga/Documents/proyectos-github/mi-quartz"
+# RUTAS 
+QUARTZ_REPO="Ruta-repo-PC/mi-quartz"
+
+PAGES_REPO="Ruta-repo-github-pages/marchelo2212.github.io"
 
 echo "🧭 Cambiando a repo Quartz..."
+
 cd "$QUARTZ_REPO"
-
-echo "🌿 Asegurando rama v4..."
-git checkout v4
-
-echo "⬇️ Sincronizando con GitHub (por cambios de Quartz Syncer)..."
-git pull --rebase origin v4
+echo "🌿 Cambiando a rama v4..."
+git checkout v4 # Mi main es V4
 
 echo "🔍 Revisando cambios locales en Quartz..."
+
 if [ -n "$(git status --porcelain)" ]; then
-  echo "📌 Hay cambios locales en Quartz. Haciendo commit..."
-  git add .
-  git commit -m "Update Quartz notes and config"
-  echo "📤 Subiendo a GitHub (jardin)..."
-  git push origin v4
-  echo "🚀 ¡Cambios enviados a GitHub!"
+
+echo "📌 Hay cambios locales en Quartz. Haciendo commit..."
+
+git add .
+
+git commit -m "Cambios locales en Quartz antes de deploy"
+
 else
-  echo "✅ Todo sincronizado. No hay cambios pendientes."
+
+echo "✅ No hay cambios locales en Quartz."
+
 fi
 
-echo ""
-echo "======================================================================"
-echo "🌱 GitHub Actions compila y despliega automáticamente en:"
-echo "   👉 https://marchelo2212.github.io/jardin/"
-echo "======================================================================"
+echo "⬇️ Haciendo pull de los cambios que envió Quartz Syncer..."
+
+git pull --rebase origin v4
+
+
+echo "🧱 Generando sitio con Quartz..."
+
+npx quartz build
+
+echo "📦 Copiando resultado al repo de GitHub Pages..."
+
+rm -rf "$PAGES_REPO"/*
+
+cp -R public/* "$PAGES_REPO"/
+
+echo "📤 Haciendo commit y push en marchelo2212.github.io..."
+
+cd "$PAGES_REPO"
+
+git add .
+
+git commit -m "Deploy automático desde deploy.sh" || echo "ℹ️ No hay cambios nuevos para commitear en Pages."
+
+git push
+
+echo "✅ Deploy completado. Revisa https://marchelo2212.github.io"
 ```
 
 # 🔁 9. Integración nativa con Obsidian: Quartz Syncer
 
-En vez de enlaces simbólicos, uso el plugin de Obsidian:
+En vez de usar enlaces simbólicos (primera opción que tomé), instalé el plugin:
 
-👉 [https://saberzero1.github.io/quartz-syncer-docs/](https://saberzero1.github.io/quartz-syncer-docs/)
+👉 <https://saberzero1.github.io/quartz-syncer-docs/>
 
-Configuración en Obsidian:
+Este plugin permite:
 
-- **Repo**: `jardin` (en tu cuenta de GitHub)
-- **Branch**: `v4`
-- **Token**: `PAT con permisos contents:write`
-- **Carpeta raíz**: `Public/`
+- elegir qué carpeta del vault se publica
+- sincronizar cambios automáticamente a GitHub
+- manejar frontmatter automáticamente
+- publicar/despublicar notas desde Obsidian
 
-Cada vez que creas o editas una nota en Obsidian, Quartz Syncer la sube a la rama `v4`, y el GitHub Action la compila y publica en `/jardin/` sin tocar la terminal.
+En mi caso configuré:
 
-# 🛠️ 10. Optimizaciones y Solución de Errores Críticos
+- Repo: `mi-quartz`
+- Branch: `v4` (Esto no está textual pero toma el repo main, por ello puse v4 como main)
+- Token: `PAT con contents:write`
+- Carpeta raíz: `Public/`
 
-Durante la evolución del jardín resolvimos dos incidencias técnicas clave:
+Esto reemplazó totalmente el enlace simbólico.
 
-### A. Prevenir el Error 5 (Aw, Snap!) de Chrome por desbordamiento de memoria
-Cuando una nota tiene diagramas grandes (por ejemplo SVGs de Excalidraw con payloads Base64), el generador de búsqueda de Quartz (`contentIndex.tsx`) indexaba esa cadena de 4 MB en texto plano, haciendo que `FlexSearch` consumiera gigabytes en el cliente y colapsara la pestaña del navegador con `STATUS_ACCESS_VIOLATION`.
+# 🎨 10. Personalización del theme
 
-**Solución aplicada** en `quartz/plugins/emitters/contentIndex.tsx`:
-```typescript
-// Filtra secuencias continuas mayores a 1.000 caracteres (Base64 / dumps)
-content: (file.data.text ?? "").replace(/\S{1000,}/g, ""),
+Quartz permite extender los componentes del layout editando:
+
 ```
-El archivo de búsqueda bajó de 4.1 MB a 470 KB, eliminando el cuelgue por completo.
+quartz.layout.ts
+quartz/styles/custom.scss
+```
 
-### B. Fallo en generación de imágenes OG con Emojis compuestos
-El plugin `CustomOgImages` fallaba al intentar renderizar emojis de teclado compuestos como `1️⃣` (`codepoint 31-20e3`).  
-**Solución**: Comentar `Plugin.CustomOgImages()` en `quartz.config.ts`, permitiendo que Quartz use la portada social por defecto (`static/og-image.png`) y reduciendo el tiempo de compilación a solo unos segundos.
+Agregué:
+
+- botones para ocultar/mostrar sidebars
+- ajustes de flex
+- colores adaptados a mi theme de Obsidian
+
+Ejemplo:
+
+```ts
+Component.Flex({
+  components: [
+    { Component: Component.Search(), grow: true },
+    { Component: Component.Darkmode() },
+    { Component: Component.ReaderMode() },
+  ]
+})
+```
+
+Pueden ver los resultados en [https://marchelo2212.github.io](https://marchelo2212.github.io/)
+Aquí el repo de mi quartz, donde podrán ver las modificaciones hechas en él: [GitHub - marchelo2212/mi-quartz: mi-quartz](https://github.com/marchelo2212/mi-quartz)
 
 # ✔️ 11. Resultado final
 
-El ecosistema opera de forma desacoplada y elegante:
+Ahora tengo un flujo así:
 
-1. **Escribo notas en Obsidian** dentro de `Public/`.
-2. **Quartz Syncer** sube automáticamente los cambios a GitHub (`marchelo2212/jardin` en la rama `v4`).
-3. **GitHub Actions** compila y publica en:  
-   👉 [https://marchelo2212.github.io/jardin/](https://marchelo2212.github.io/jardin/)
-4. **Mi Portada Principal y CV Académico** vive independiente en:  
-   👉 [https://marchelo2212.github.io/](https://marchelo2212.github.io/)
+1. Escribo notas en Obsidian → dentro de `Public/`
+2. Quartz Syncer detecta cambios → los envía al repo en `v4` (main)
+3. Ejecuto mi `deploy.sh`. para llevar de quartz a mi sitio web
+   1. GitHub Actions construye Quartz
+   2. GitHub Pages actualiza el sitio
+4. El sitio queda publicado en:\
+   👉 [https://marchelo2212.github.io](https://marchelo2212.github.io/)
+   Todo **sin tocar terminal** si no quiero.\
+   Y si quiero ajustes técnicos, puedo usar `deploy.sh`.
 
 # 📌 Conclusiones y aprendizajes
 
-- **Desacoplamiento arquitectónico**: Servir el CV en la raíz y Quartz en `/jardin/` mediante repositorios separados de GitHub Pages evita sobreescrituras accidentales y permite que cada proyecto tenga su propio ciclo de vida.
-- **CI/CD en la nube**: Dejar la compilación a GitHub Actions elimina la dependencia de scripts locales complejos.
-- **Obsidian + Quartz Syncer**: Convierte tu bóveda personal en un CMS estático ultrarrápido sin fricciones.
-- **Sanitización del índice de búsqueda**: Controlar el tamaño del archivo `contentIndex.json` es vital para que `FlexSearch` no sobrecargue la memoria del navegador.
+- Quartz 4 es muy flexible, pero requiere entender su estructura.
+- GitHub Pages + Actions da un flujo perfecto para sitios estáticos.
+- Obsidian + Quartz Syncer convierte tu vault en un CMS real.
+- Los bloqueadores como Brave afectan mucho los embeds.
+- Personalizar Quartz es tan simple como editar TS/SCSS.

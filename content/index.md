@@ -35,7 +35,7 @@ Este sitio es mi **espacio digital abierto**, donde conecto proyectos, ideas, re
 > - Gestión del conocimiento
 > - Educación abierta, STEAM y pensamiento computacional
 >
-> 👉 **[[Blog/index|Explorar el Blog]]**
+> 👉 **[[Blog/index]]**
 
 > [!tip] 🧩 **Proyectos & Consultorías**
 > Portafolio con experiencias junto a:
@@ -46,7 +46,7 @@ Este sitio es mi **espacio digital abierto**, donde conecto proyectos, ideas, re
 >
 > Incluye **casos de estudio, soluciones tecnológicas, modelos tecnopedagógicos y resultados de impacto**.
 >
-> 👉 **[[Proyectos y Consultorías/|Ver proyectos]]**
+> 👉 **[Ver proyectos](/proyectos/)**
 
 > [!note] 🎓 **Recursos para estudiantes y docentes**
 > Material abierto y reutilizable:
@@ -57,7 +57,7 @@ Este sitio es mi **espacio digital abierto**, donde conecto proyectos, ideas, re
 > - Recursos para programación, PC y STEAM
 > - Plantillas, rúbricas y herramientas prácticas
 >
-> 👉 **[[Recursos/|Acceder a recursos]]**
+> 👉 **[Acceder a recursos](/recursos/)**
 
 > [!abstract] 🧪 **Investigación & Academia**
 > Estudiante de **Doctorado en Ingeniería (Universidad de La Sabana)** y docente universitario.
@@ -69,7 +69,7 @@ Este sitio es mi **espacio digital abierto**, donde conecto proyectos, ideas, re
 > - Notas de lectura y _Research Notes_
 > - Participación en congresos y ponencias
 >
-> 👉 **[[Sobre mi/9-Publicaciones|Ver perfil académico]]**
+> 👉 **[Ver perfil académico](/about/publicaciones/)**
 
 ## 🧠 Sobre mí
 
@@ -86,8 +86,8 @@ He liderado y acompañado proyectos en áreas como:
 - Modelos tecnopedagógicos
 - Gestión del conocimiento
 
-👉 **[[Sobre mi/_Index_of_Sobre mi|Conocer más sobre mí]]**\
-👉 **[[Sobre mi/CV-Marcelo Sotaminga|Ver CV vivo]]**
+👉 **[Conocer más sobre mí](/about/biografia/)**\
+👉 **[Ver CV vivo](/about/cv/)**
 
 ---
 
@@ -119,7 +119,7 @@ Estoy abierto a propuestas de:
 > [!tip] Si tienes una idea, un reto o un proyecto…
 > Escríbeme y lo conversamos.
 
-👉 **[[Contacto/Contacto|Contáctame aquí]]**
+👉 **[Contáctame aquí](/contacto/)**
 
 ---
 
