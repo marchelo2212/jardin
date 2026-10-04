@@ -5,6 +5,6 @@
 - [[BBDD-Proyecto Informe 3|📌 Informe 3 –  Video carga de datos del proyecto]]
 - [[BBDD-Proyecto Informe 4 (final)|📑 Guía de Elaboración: Informe Final del Proyecto Integrador]]
 - [[BBDD-Proyecto Integrador|📌 Proyecto Integrador – Asignatura Base de Datos]]
-- [[index]]
+- [[Teaching/Unisabana/BBDD/BBDD-Proyecto/index]]
 
 ↩️  [[BBDD-Recursos]]

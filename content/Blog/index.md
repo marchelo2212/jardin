@@ -34,4 +34,4 @@ modified: 2026-06-11T14:30
   - [[Presentaciones Interactivas con JavaScript|1. Reveal.js — el estándar profesional web]]
   - [[SMTP OAuth2 en Moodle con Gmail error de scope en acceso offline|SMTP OAuth2 en Moodle con Gmail: cuando el problema no es la contraseña, sino el scope]]
 - [[_Index_of_Blog]]
-- [[index]]
+- [[Blog/index]]

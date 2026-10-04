@@ -1,7 +1,7 @@
 ---
 publish: true
 created: 2026-03-11T14:27:27.472Z
-modified: 2026-09-20T03:25:57.851Z
+modified: 2026-10-04T07:16:01.809Z
 tags:
   - MOCs
 ---
@@ -20,7 +20,7 @@ tags:
 - [[Guia 05-Parcial 2]]
 - [[Guía 06-Vistas|Guía 06 - Vistas en MySQL]]
 - [[Guia 07-Procedimientos almacenados, triggers y transacciones|Guía 07 - Programación en SQL (Procedimientos, Disparadores, Funciones y Transacciones)]]
-- [[index]]
+- [[Teaching/Unisabana/BBDD/BBDD-GuiasPracticas/index]]
 - [[Tip and tricks SQL|Cursos, tips tricks SQL]]
 
 ↩️  [[BBDD-Recursos]]
